@@ -1,6 +1,7 @@
 package com.nxtbitz.agroguidance
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -25,6 +26,7 @@ import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -33,9 +35,14 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.nxtbitz.agroguidance.data.MongoRepository
+import com.nxtbitz.agroguidance.data.User
 import com.nxtbitz.agroguidance.ui.theme.*
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
+    private val repository = MongoRepository()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -47,7 +54,7 @@ class MainActivity : ComponentActivity() {
                     Crossfade(targetState = currentScreen, label = "screen_transition") { screen ->
                         when (screen) {
                             "startup" -> StartupScreen(onGetStarted = { currentScreen = "login" })
-                            "login" -> LoginPage()
+                            "login" -> LoginPage(repository)
                         }
                     }
                 }
@@ -128,10 +135,12 @@ fun StartupScreen(onGetStarted: () -> Unit) {
 }
 
 @Composable
-fun LoginPage() {
+fun LoginPage(repository: MongoRepository) {
     var isLoginTab by remember { mutableStateOf(true) }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
+    val scope = rememberCoroutineScope()
+    val context = LocalContext.current
 
     Box(
         modifier = Modifier
@@ -229,7 +238,35 @@ fun LoginPage() {
 
             Spacer(modifier = Modifier.height(40.dp))
 
-            SubmitButton(isLoginTab = isLoginTab)
+            SubmitButton(
+                isLoginTab = isLoginTab,
+                onClick = {
+                    if (email.isBlank() || password.isBlank()) {
+                        Toast.makeText(context, "Please fill all fields", Toast.LENGTH_SHORT).show()
+                        return@SubmitButton
+                    }
+                    
+                    scope.launch {
+                        if (isLoginTab) {
+                            val user = repository.loginUser(email, password)
+                            if (user != null) {
+                                Toast.makeText(context, "Login Successful!", Toast.LENGTH_SHORT).show()
+                                // Navigate to home or dashboard
+                            } else {
+                                Toast.makeText(context, "Invalid credentials", Toast.LENGTH_SHORT).show()
+                            }
+                        } else {
+                            val success = repository.registerUser(User(email = email, password = password))
+                            if (success) {
+                                Toast.makeText(context, "Registration Successful!", Toast.LENGTH_SHORT).show()
+                                isLoginTab = true
+                            } else {
+                                Toast.makeText(context, "User already exists or error occurred", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                }
+            )
             
             Spacer(modifier = Modifier.height(32.dp))
             
@@ -298,9 +335,9 @@ fun AuthTextField(
 }
 
 @Composable
-fun SubmitButton(isLoginTab: Boolean) {
+fun SubmitButton(isLoginTab: Boolean, onClick: () -> Unit) {
     Button(
-        onClick = { /* Handle Auth */ },
+        onClick = onClick,
         modifier = Modifier
             .fillMaxWidth()
             .height(56.dp),
