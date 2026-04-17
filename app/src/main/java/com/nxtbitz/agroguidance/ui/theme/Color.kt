@@ -23,3 +23,12 @@ val SoftGreen = Color(0xFF86EFAC)
 val CardBg = Color(0xFF0F1E14).copy(alpha = 0.85f)
 val TextFieldBg = Color.Black.copy(alpha = 0.4f)
 val HintText = Color(0xFF4B5563)
+
+// Streamlit Theme Colors
+val StMainBg = Color(0xFF0E1117)
+val StStatBoxBg = Color(0xFF1C1F26)
+val StBorder = Color(0xFF2A2A2A)
+val StCropCardBorder = Color(0xFF4CAF50)
+val StAiResponseBg = Color(0xFF1B2B1B)
+val StAiResponseText = Color(0xFFA5D6A7)
+val StHighlight = Color(0xFFFFCC00)

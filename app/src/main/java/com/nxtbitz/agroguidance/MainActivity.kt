@@ -4,12 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.animation.AnimatedContent
-import androidx.compose.animation.animateColorAsState
-import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.core.tween
+import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -17,8 +13,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Agriculture
 import androidx.compose.material.icons.outlined.Email
 import androidx.compose.material.icons.outlined.Lock
 import androidx.compose.material3.*
@@ -27,18 +22,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Shadow
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nxtbitz.agroguidance.ui.theme.*
@@ -49,7 +40,87 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AgroGuidanceTheme {
-                LoginPage()
+                var currentScreen by remember { mutableStateOf("startup") }
+                
+                Surface(modifier = Modifier.fillMaxSize(), color = PureBlackBg) {
+                    Crossfade(targetState = currentScreen, label = "screen_transition") { screen ->
+                        when (screen) {
+                            "startup" -> StartupScreen(onGetStarted = { currentScreen = "login" })
+                            "login" -> LoginPage()
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun StartupScreen(onGetStarted: () -> Unit) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .drawBehind {
+                drawRect(
+                    Brush.radialGradient(
+                        colors = listOf(DarkGreenBg, DeepBlackBg, PureBlackBg),
+                        center = Offset(size.width * 0.5f, size.height * 0.3f),
+                        radius = size.maxDimension * 1.2f
+                    )
+                )
+            },
+        contentAlignment = Alignment.Center
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier.padding(32.dp)
+        ) {
+            Icon(
+                imageVector = Icons.Default.Agriculture,
+                contentDescription = null,
+                modifier = Modifier.size(120.dp),
+                tint = PrimaryGreen
+            )
+            
+            Spacer(modifier = Modifier.height(32.dp))
+            
+            Text(
+                text = "AgroGuidance",
+                style = TextStyle(
+                    fontSize = 42.sp,
+                    fontWeight = FontWeight.ExtraBold,
+                    color = Color.White,
+                    letterSpacing = 1.sp
+                )
+            )
+            
+            Spacer(modifier = Modifier.height(16.dp))
+            
+            Text(
+                text = "Smart Farming for a\nSustainable Future",
+                style = TextStyle(
+                    fontSize = 18.sp,
+                    color = Color.LightGray,
+                    textAlign = TextAlign.Center,
+                    lineHeight = 26.sp
+                )
+            )
+            
+            Spacer(modifier = Modifier.height(80.dp))
+            
+            Button(
+                onClick = onGetStarted,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(60.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = PrimaryGreen),
+                shape = RoundedCornerShape(30.dp),
+                elevation = ButtonDefaults.buttonElevation(defaultElevation = 10.dp)
+            ) {
+                Text(
+                    text = "Explore Now",
+                    style = TextStyle(fontSize = 18.sp, fontWeight = FontWeight.Bold, color = Color.White)
+                )
             }
         }
     }
@@ -58,7 +129,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun LoginPage() {
     var isLoginTab by remember { mutableStateOf(true) }
-    var username by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
     Box(
@@ -84,162 +155,109 @@ fun LoginPage() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Spacer(modifier = Modifier.height(60.dp))
-            HeroSection()
-            Spacer(modifier = Modifier.height(40.dp))
-            AuthCard(
-                isLoginTab = isLoginTab,
-                onTabChange = { isLoginTab = it },
-                username = username,
-                onUsernameChange = { username = it },
-                password = password,
-                onPasswordChange = { password = it }
-            )
-            Spacer(modifier = Modifier.height(30.dp))
+            
             Text(
-                text = "🌿 Agro Guidance · Empowering Farmers",
-                style = TextStyle(color = Color.White.copy(alpha = 0.24f), fontSize = 12.sp)
+                text = if (isLoginTab) "Welcome Back" else "Join Us",
+                style = TextStyle(
+                    fontSize = 32.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White
+                )
             )
-            Spacer(modifier = Modifier.height(24.dp))
-        }
-    }
-}
+            
+            Text(
+                text = if (isLoginTab) "Sign in to your account" else "Start your farming journey",
+                style = TextStyle(fontSize = 16.sp, color = Color.Gray),
+                modifier = Modifier.padding(top = 8.dp)
+            )
 
-@Composable
-fun HeroSection() {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
-        Text(
-            text = "🌱",
-            style = TextStyle(
-                fontSize = 60.sp,
-                shadow = Shadow(
-                    color = Color(0x8C4ADE80),
-                    blurRadius = 18f
-                )
-            )
-        )
-        Text(
-            text = "Agro Guidance",
-            style = TextStyle(
-                fontSize = 32.sp,
-                fontWeight = FontWeight.Bold,
-                brush = Brush.linearGradient(
-                    colors = listOf(LightGreen, AccentGreen, SoftGreen)
-                )
-            )
-        )
-        Text(
-            text = "Your intelligent farming companion",
-            style = TextStyle(color = Color.Gray, fontSize = 14.sp)
-        )
-    }
-}
+            Spacer(modifier = Modifier.height(40.dp))
 
-@Composable
-fun AuthCard(
-    isLoginTab: Boolean,
-    onTabChange: (Boolean) -> Unit,
-    username: String,
-    onUsernameChange: (String) -> Unit,
-    password: String,
-    onPasswordChange: (String) -> Unit
-) {
-    Surface(
-        modifier = Modifier
-            .fillMaxWidth()
-            .shadow(
-                elevation = 50.dp,
-                shape = RoundedCornerShape(24.dp),
-                spotColor = Color.Black.copy(alpha = 0.5f)
-            ),
-        color = CardBg,
-        shape = RoundedCornerShape(24.dp),
-        border = androidx.compose.foundation.BorderStroke(1.dp, Color.Green.copy(alpha = 0.18f))
-    ) {
-        Column(
-            modifier = Modifier.padding(24.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            TabSwitcher(isLoginTab, onTabChange)
-            Spacer(modifier = Modifier.height(25.dp))
-            Column(modifier = Modifier.fillMaxWidth()) {
-                Text(
-                    text = if (isLoginTab) "SIGN IN TO YOUR ACCOUNT" else "CREATE A NEW ACCOUNT",
-                    style = TextStyle(
-                        color = Color.Gray,
-                        fontSize = 10.sp,
-                        letterSpacing = 1.2.sp,
-                        fontWeight = FontWeight.Bold
-                    )
+            // Custom Tab Switcher
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(TextFieldBg.copy(alpha = 0.5f))
+                    .padding(4.dp)
+            ) {
+                TabButton(
+                    label = "Login",
+                    isActive = isLoginTab,
+                    onClick = { isLoginTab = true },
+                    modifier = Modifier.weight(1f)
                 )
-                Spacer(modifier = Modifier.height(15.dp))
-                AuthTextField(
-                    value = username,
-                    onValueChange = onUsernameChange,
-                    hint = "Username",
-                    icon = Icons.Outlined.Email
-                )
-                Spacer(modifier = Modifier.height(15.dp))
-                AuthTextField(
-                    value = password,
-                    onValueChange = onPasswordChange,
-                    hint = "Password",
-                    icon = Icons.Outlined.Lock,
-                    isPass = true
+                TabButton(
+                    label = "Register",
+                    isActive = !isLoginTab,
+                    onClick = { isLoginTab = false },
+                    modifier = Modifier.weight(1f)
                 )
             }
-            Spacer(modifier = Modifier.height(30.dp))
-            SubmitButton(isLoginTab)
-        }
-    }
-}
 
-@Composable
-fun TabSwitcher(isLoginActive: Boolean, onTabChange: (Boolean) -> Unit) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clip(RoundedCornerShape(12.dp))
-            .background(Color.Black.copy(alpha = 0.38f))
-            .padding(4.dp)
-    ) {
-        TabButton(
-            label = "🔑 Sign In",
-            isActive = isLoginActive,
-            onClick = { onTabChange(true) },
-            modifier = Modifier.weight(1f)
-        )
-        TabButton(
-            label = "✨ Sign Up",
-            isActive = !isLoginActive,
-            onClick = { onTabChange(false) },
-            modifier = Modifier.weight(1f)
-        )
+            Spacer(modifier = Modifier.height(32.dp))
+
+            AuthTextField(
+                value = email,
+                onValueChange = { email = it },
+                hint = "Email Address",
+                icon = Icons.Outlined.Email
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            AuthTextField(
+                value = password,
+                onValueChange = { password = it },
+                hint = "Password",
+                icon = Icons.Outlined.Lock,
+                isPass = true
+            )
+
+            if (isLoginTab) {
+                Text(
+                    text = "Forgot Password?",
+                    color = PrimaryGreen,
+                    modifier = Modifier
+                        .align(Alignment.End)
+                        .padding(top = 12.dp)
+                        .clickable { /* Handle Forgot Password */ },
+                    style = TextStyle(fontSize = 14.sp, fontWeight = FontWeight.Medium)
+                )
+            }
+
+            Spacer(modifier = Modifier.height(40.dp))
+
+            SubmitButton(isLoginTab = isLoginTab)
+            
+            Spacer(modifier = Modifier.height(32.dp))
+            
+            Text(
+                text = "By continuing, you agree to our Terms of Service",
+                style = TextStyle(fontSize = 12.sp, color = Color.DarkGray, textAlign = TextAlign.Center)
+            )
+        }
     }
 }
 
 @Composable
 fun TabButton(label: String, isActive: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier) {
-    val bgColor by animateColorAsState(
-        targetValue = if (isActive) Color.Transparent else Color.Transparent,
-        label = "tabColor"
-    )
-
     Box(
         modifier = modifier
-            .clip(RoundedCornerShape(9.dp))
+            .clip(RoundedCornerShape(8.dp))
             .background(
                 if (isActive) Brush.linearGradient(listOf(PrimaryGreen, SecondaryGreen))
                 else Brush.linearGradient(listOf(Color.Transparent, Color.Transparent))
             )
             .clickable { onClick() }
-            .padding(vertical = 10.dp),
+            .padding(vertical = 12.dp),
         contentAlignment = Alignment.Center
     ) {
         Text(
             text = label,
             style = TextStyle(
                 color = if (isActive) Color.White else Color.Gray,
-                fontWeight = FontWeight.SemiBold,
+                fontWeight = FontWeight.Bold,
                 fontSize = 14.sp
             )
         )
@@ -260,16 +278,16 @@ fun AuthTextField(
         onValueChange = onValueChange,
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(10.dp)),
+            .clip(RoundedCornerShape(12.dp)),
         placeholder = { Text(hint, color = HintText) },
-        leadingIcon = { Icon(icon, contentDescription = null, tint = Color.Green.copy(alpha = 0.5f), modifier = Modifier.size(20.dp)) },
+        leadingIcon = { Icon(icon, contentDescription = null, tint = PrimaryGreen.copy(alpha = 0.6f), modifier = Modifier.size(20.dp)) },
         visualTransformation = if (isPass) PasswordVisualTransformation() else androidx.compose.ui.text.input.VisualTransformation.None,
         keyboardOptions = if (isPass) KeyboardOptions(keyboardType = KeyboardType.Password) else KeyboardOptions.Default,
         colors = TextFieldDefaults.colors(
             focusedContainerColor = TextFieldBg,
             unfocusedContainerColor = TextFieldBg,
             focusedIndicatorColor = PrimaryGreen,
-            unfocusedIndicatorColor = Color.Green.copy(alpha = 0.2f),
+            unfocusedIndicatorColor = Color.Transparent,
             cursorColor = PrimaryGreen,
             focusedTextColor = Color.White,
             unfocusedTextColor = Color.White
@@ -284,22 +302,14 @@ fun SubmitButton(isLoginTab: Boolean) {
         onClick = { /* Handle Auth */ },
         modifier = Modifier
             .fillMaxWidth()
-            .height(50.dp),
-        shape = RoundedCornerShape(12.dp),
+            .height(56.dp),
+        shape = RoundedCornerShape(16.dp),
         colors = ButtonDefaults.buttonColors(containerColor = PrimaryGreen),
         elevation = ButtonDefaults.buttonElevation(defaultElevation = 8.dp)
     ) {
         Text(
-            text = if (isLoginTab) "Sign In →" else "Create Account →",
+            text = if (isLoginTab) "Sign In" else "Create Account",
             style = TextStyle(fontWeight = FontWeight.Bold, color = Color.White, fontSize = 16.sp)
         )
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun LoginPagePreview() {
-    AgroGuidanceTheme {
-        LoginPage()
     }
 }
