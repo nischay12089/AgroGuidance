@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">অ্যাগ্রো গাইডেন্স</string>
+    <string name="welcome_back">ফিরে আসার জন্য স্বাগতম</string>
+    <string name="join_us">আমাদের সাথে যোগ দিন</string>
+    <string name="sign_in_to_account">আপনার অ্যাকাউন্টে সাইন ইন করুন</string>
+    <string name="start_farming_journey">আপনার চাষের যাত্রা শুরু করুন</string>
+    <string name="login">লগইন</string>
+    <string name="register">নিবন্ধন</string>
+    <string name="email_address">ইমেল ঠিকানা</string>
+    <string name="password">পাসওয়ার্ড</string>
+    <string name="forgot_password">পাসওয়ার্ড ভুলে গেছেন?</string>
+    <string name="sign_in">সাইন ইন করুন</string>
+    <string name="create_account">অ্যাকাউন্ট তৈরি করুন</string>
+    <string name="terms_service">চালিয়ে যাওয়ার মাধ্যমে, আপনি আমাদের পরিষেবার শর্তাবলীতে সম্মত হন</string>
+    <string name="smart_farming_tagline">একটি টেকসই ভবিষ্যতের জন্য\nস্মার্ট চাষাবাদ</string>
+    <string name="explore_now">এখনই এক্সপ্লোর করুন</string>
+</resources>

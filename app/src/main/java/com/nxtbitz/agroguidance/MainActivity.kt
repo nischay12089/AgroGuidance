@@ -25,6 +25,7 @@ import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -85,7 +86,7 @@ fun StartupScreen(onGetStarted: () -> Unit) {
             Spacer(modifier = Modifier.height(32.dp))
             
             Text(
-                text = "AgroGuidance",
+                text = stringResource(R.string.app_name),
                 style = TextStyle(
                     fontSize = 42.sp,
                     fontWeight = FontWeight.ExtraBold,
@@ -97,7 +98,7 @@ fun StartupScreen(onGetStarted: () -> Unit) {
             Spacer(modifier = Modifier.height(16.dp))
             
             Text(
-                text = "Smart Farming for a\nSustainable Future",
+                text = stringResource(R.string.smart_farming_tagline),
                 style = TextStyle(
                     fontSize = 18.sp,
                     color = Color.LightGray,
@@ -118,7 +119,7 @@ fun StartupScreen(onGetStarted: () -> Unit) {
                 elevation = ButtonDefaults.buttonElevation(defaultElevation = 10.dp)
             ) {
                 Text(
-                    text = "Explore Now",
+                    text = stringResource(R.string.explore_now),
                     style = TextStyle(fontSize = 18.sp, fontWeight = FontWeight.Bold, color = Color.White)
                 )
             }
@@ -157,7 +158,7 @@ fun LoginPage() {
             Spacer(modifier = Modifier.height(60.dp))
             
             Text(
-                text = if (isLoginTab) "Welcome Back" else "Join Us",
+                text = stringResource(if (isLoginTab) R.string.welcome_back else R.string.join_us),
                 style = TextStyle(
                     fontSize = 32.sp,
                     fontWeight = FontWeight.Bold,
@@ -166,7 +167,7 @@ fun LoginPage() {
             )
             
             Text(
-                text = if (isLoginTab) "Sign in to your account" else "Start your farming journey",
+                text = stringResource(if (isLoginTab) R.string.sign_in_to_account else R.string.start_farming_journey),
                 style = TextStyle(fontSize = 16.sp, color = Color.Gray),
                 modifier = Modifier.padding(top = 8.dp)
             )
@@ -182,13 +183,13 @@ fun LoginPage() {
                     .padding(4.dp)
             ) {
                 TabButton(
-                    label = "Login",
+                    label = stringResource(R.string.login),
                     isActive = isLoginTab,
                     onClick = { isLoginTab = true },
                     modifier = Modifier.weight(1f)
                 )
                 TabButton(
-                    label = "Register",
+                    label = stringResource(R.string.register),
                     isActive = !isLoginTab,
                     onClick = { isLoginTab = false },
                     modifier = Modifier.weight(1f)
@@ -200,7 +201,7 @@ fun LoginPage() {
             AuthTextField(
                 value = email,
                 onValueChange = { email = it },
-                hint = "Email Address",
+                hint = stringResource(R.string.email_address),
                 icon = Icons.Outlined.Email
             )
 
@@ -209,14 +210,14 @@ fun LoginPage() {
             AuthTextField(
                 value = password,
                 onValueChange = { password = it },
-                hint = "Password",
+                hint = stringResource(R.string.password),
                 icon = Icons.Outlined.Lock,
                 isPass = true
             )
 
             if (isLoginTab) {
                 Text(
-                    text = "Forgot Password?",
+                    text = stringResource(R.string.forgot_password),
                     color = PrimaryGreen,
                     modifier = Modifier
                         .align(Alignment.End)
@@ -233,7 +234,7 @@ fun LoginPage() {
             Spacer(modifier = Modifier.height(32.dp))
             
             Text(
-                text = "By continuing, you agree to our Terms of Service",
+                text = stringResource(R.string.terms_service),
                 style = TextStyle(fontSize = 12.sp, color = Color.DarkGray, textAlign = TextAlign.Center)
             )
         }
@@ -308,7 +309,7 @@ fun SubmitButton(isLoginTab: Boolean) {
         elevation = ButtonDefaults.buttonElevation(defaultElevation = 8.dp)
     ) {
         Text(
-            text = if (isLoginTab) "Sign In" else "Create Account",
+            text = stringResource(if (isLoginTab) R.string.sign_in else R.string.create_account),
             style = TextStyle(fontWeight = FontWeight.Bold, color = Color.White, fontSize = 16.sp)
         )
     }

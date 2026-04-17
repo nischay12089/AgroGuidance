@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">एग्रोगाइडन्स</string>
+    <string name="welcome_back">पुन्हा स्वागत आहे</string>
+    <string name="join_us">आमच्याशी जोडा</string>
+    <string name="sign_in_to_account">तुमच्या खात्यात साइन इन करा</string>
+    <string name="start_farming_journey">तुमचा शेतीचा प्रवास सुरू करा</string>
+    <string name="login">लॉगिन</string>
+    <string name="register">नोंदणी</string>
+    <string name="email_address">ईमेल पत्ता</string>
+    <string name="password">पासवर्ड</string>
+    <string name="forgot_password">पासवर्ड विसरलात?</string>
+    <string name="sign_in">साइन इन करा</string>
+    <string name="create_account">खाते तयार करा</string>
+    <string name="terms_service">पुढील सुरू ठेवून, आपण आमच्या सेवा अटींशी सहमत आहात</string>
+    <string name="smart_farming_tagline">शाश्वत भविष्यासाठी\nस्मार्ट शेती</string>
+    <string name="explore_now">आता एक्सप्लोर करा</string>
+</resources>
