@@ -14,4 +14,54 @@
     <string name="terms_service">जारी रखकर, आप हमारी सेवा की शर्तों से सहमत हैं</string>
     <string name="smart_farming_tagline">एक स्थायी भविष्य के लिए\nस्मार्ट खेती</string>
     <string name="explore_now">अभी अन्वेषण करें</string>
+    <string name="welcome">स्वागत है</string>
+    <string name="dashboard_subtitle">आपका कृषि डैशबोर्ड</string>
+    <string name="crops">फसलें</string>
+    <string name="solutions">समाधान</string>
+    <string name="ready">तैयार</string>
+    <string name="offline_ai">ऑफलाइन एआई</string>
+    <string name="search">खोजें</string>
+    <string name="library">लाइब्रेरी</string>
+    <string name="ai_advisor">एआई सलाहकार</string>
+    <string name="app_settings">ऐप सेटिंग्स</string>
+    <string name="language_preferences">भाषा प्राथमिकताएं</string>
+    <string name="select_language_desc">ऐप के लिए अपनी पसंदीदा भाषा चुनें</string>
+    <string name="personalize_profile">अपना प्रोफाइल वैयक्तिकृत करें</string>
+    <string name="enter_name_desc">अपनी खेती की यात्रा शुरू करने के लिए अपना नाम दर्ज करें</string>
+    <string name="your_full_name">आपका पूरा नाम</string>
+    <string name="continue_btn">जारी रखें</string>
+    <string name="ai_consultant_title">व्यक्तिगत एआई कृषि सलाहकार</string>
+    <string name="ai_consultant_desc">मिट्टी, मौसम या जैविक खेती के बारे में कुछ भी पूछें — पूरी तरह से ऑफलाइन काम करता है।</string>
+    <string name="ai_prompt_hint">जैसे: मैं जैविक उर्वरक कैसे बनाऊं?</string>
+    <string name="ai_suggestion_label">एआई विशेषज्ञ सुझाव</string>
+    <string name="enter_name_error">कृपया अपना नाम दर्ज करें</string>
+    <string name="search_crop_hint">फसल खोजें (जैसे आम, चावल)...</string>
+    <string name="about_app">एग्रोगाइडेंस के बारे में</string>
+    <string name="version">संस्करण</string>
+
+    <!-- Crop Names -->
+    <string name="crop_mango">आम</string>
+    <string name="crop_wheat">गेहूं</string>
+    <string name="crop_rice">चावल</string>
+    <string name="crop_cotton">कपास</string>
+
+    <!-- Issues -->
+    <string name="issue_powdery_mildew">पाउडरी मिल्ड्यू</string>
+    <string name="issue_anthracnose">एंथ्रेक्नोज</string>
+    <string name="issue_rust">रतुआ (रस्ट)</string>
+    <string name="issue_loose_smut">लूज स्मट</string>
+    <string name="issue_blast">ब्लास्ट (झोंका रोग)</string>
+    <string name="issue_brown_plant_hopper">भूरा पादप फुदका</string>
+    <string name="issue_bollworm">बॉलवॉर्म</string>
+    <string name="issue_aphids">एफिड्स (माहू)</string>
+
+    <!-- Solutions -->
+    <string name="sol_mango_mildew">15 दिनों के अंतराल पर 2 ग्राम/लीटर घुलनशील गंधक (सल्फर) का छिड़काव करें।</string>
+    <string name="sol_mango_anthracnose">कार्बेन्डाजिम 1 ग्राम/लीटर या कॉपर ऑक्सीक्लोराइड 3 ग्राम/लीटर का छिड़काव करें।</string>
+    <string name="sol_wheat_rust">प्रतिरोधी किस्मों (HD 2967) का उपयोग करें या प्रोपिकोनाज़ोल का छिड़काव करें।</string>
+    <string name="sol_wheat_smut">विटावैक्स (2 ग्राम/किग्रा बीज) के साथ बीज उपचार करें।</string>
+    <string name="sol_rice_blast">ट्राइसाइक्लाज़ोल 0.6 ग्राम/लीटर या कार्बेन्डाजिम 1 ग्राम/लीटर का छिड़काव करें।</string>
+    <string name="sol_rice_bph">प्रत्येक 2 मीटर की कतारों के बीच 30 सेमी खाली स्थान रखें।</string>
+    <string name="sol_cotton_bollworm">फेरोमोन ट्रैप का उपयोग करें और स्पिनोसैड 45 SC का छिड़काव करें।</string>
+    <string name="sol_cotton_aphids">मिथाइल डेमेटोन 2 मिली/लीटर का छिड़काव करें।</string>
 </resources>

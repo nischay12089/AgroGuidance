@@ -1,0 +1,61 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <!-- Background Circle -->
+    <path
+        android:fillColor="#8DB46F"
+        android:pathData="M100,100m-80,0a80,80 0,1 1,160 0a80,80 0,1 1,-160 0" />
+    <path
+        android:fillColor="#7BA35C"
+        android:pathData="M100,100m-70,0a70,70 0,1 1,140 0a70,70 0,1 1,-140 0" />
+
+    <!-- Chip Body -->
+    <path
+        android:fillColor="#D3D3D3"
+        android:pathData="M75,75h50v50h-50z" />
+    <path
+        android:fillColor="#C0C0C0"
+        android:pathData="M82,82h36v36h-36z" />
+
+    <!-- Circuit Lines (Horizontal) -->
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="2" android:pathData="M55,85h20M55,95h20M55,105h20M55,115h20" />
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="2" android:pathData="M125,85h20M125,95h20M125,105h20M125,115h20" />
+
+    <!-- Circuit Lines (Vertical) -->
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="2" android:pathData="M85,55v20M95,55v20M105,55v20M115,55v20" />
+    <path android:strokeColor="#FFFFFF" android:strokeWidth="2" android:pathData="M85,125v20M95,125v20M105,125v20M115,125v20" />
+
+    <!-- Circuit Dots -->
+    <path android:fillColor="#FFFFFF" android:pathData="M55,85m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M55,95m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M55,105m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M55,115m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+
+    <path android:fillColor="#FFFFFF" android:pathData="M145,85m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M145,95m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M145,105m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M145,115m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+
+    <path android:fillColor="#FFFFFF" android:pathData="M85,55m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M95,55m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M105,55m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M115,55m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+
+    <path android:fillColor="#FFFFFF" android:pathData="M85,145m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M95,145m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M105,145m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M115,145m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+
+    <!-- Sprout (Inner) -->
+    <path
+        android:fillColor="#8B4513"
+        android:pathData="M90,110c0,0 5,-5 10,-5s10,5 10,5v3h-20z" />
+    <path
+        android:fillColor="#A2D149"
+        android:pathData="M100,105c0,0 -8,-10 -2,-18c0,0 10,2 2,18z" />
+    <path
+        android:fillColor="#A2D149"
+        android:pathData="M100,105c0,0 8,-10 2,-18c0,0 -10,2 -2,18z" />
+</vector>

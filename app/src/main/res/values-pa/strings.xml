@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">ਐਗਰੋਗਾਈਡੈਂਸ</string>
+    <string name="welcome_back">ਜੀ ਆਇਆਂ ਨੂੰ</string>
+    <string name="join_us">ਸਾਡੇ ਨਾਲ ਜੁੜੋ</string>
+    <string name="sign_in_to_account">ਆਪਣੇ ਖਾਤੇ ਵਿੱਚ ਸਾਈਨ ਇਨ ਕਰੋ</string>
+    <string name="start_farming_journey">ਆਪਣੀ ਖੇਤੀ ਯਾਤਰਾ ਸ਼ੁਰੂ ਕਰੋ</string>
+    <string name="login">ਲੌਗਇਨ</string>
+    <string name="register">ਰਜਿਸਟਰ</string>
+    <string name="email_address">ਈਮੇਲ ਪਤਾ</string>
+    <string name="password">ਪਾਸਵਰਡ</string>
+    <string name="forgot_password">ਪਾਸਵਰਡ ਭੁੱਲ ਗਏ?</string>
+    <string name="sign_in">ਸਾਈਨ ਇਨ ਕਰੋ</string>
+    <string name="create_account">ਖਾਤਾ ਬਣਾਓ</string>
+    <string name="terms_service">ਜਾਰੀ ਰੱਖ ਕੇ, ਤੁਸੀਂ ਸਾਡੀਆਂ ਸੇਵਾ ਦੀਆਂ ਸ਼ਰਤਾਂ ਨਾਲ ਸਹਿਮਤ ਹੁੰਦੇ ਹੋ</string>
+    <string name="smart_farming_tagline">ਟਿਕਾਊ ਭਵਿੱ𝚇 ਲਈ\nਸਮਾਰਟ ਖੇਤੀ</string>
+    <string name="explore_now">ਹੁਣੇ ਐਕਸਪਲੋਰ ਕਰੋ</string>
+    <string name="welcome">ਜੀ ਆਇਆਂ ਨੂੰ</string>
+    <string name="dashboard_subtitle">ਤੁਹਾਡਾ ਖੇਤੀਬਾੜੀ ਡੈਸ਼ਬੋਰਡ</string>
+    <string name="crops">ਫ਼ਸਲਾਂ</string>
+    <string name="solutions">ਹੱਲ</string>
+    <string name="ready">ਤਿਆਰ</string>
+    <string name="offline_ai">ਔਫਲਾਈਨ AI</string>
+    <string name="search">ਖੋਜੋ</string>
+    <string name="library">ਲਾਇਬ੍ਰੇਰੀ</string>
+    <string name="ai_advisor">AI ਸਲਾਹਕਾਰ</string>
+    <string name="app_settings">ਐਪ ਸੈਟਿੰਗਾਂ</string>
+    <string name="language_preferences">ਭਾਸ਼ਾ ਤਰਜੀਹਾਂ</string>
+    <string name="language">ਭਾਸ਼ਾ</string>
+    <string name="select_language_desc">ਐਪ ਲਈ ਆਪਣੀ ਪਸੰਦੀਦਾ ਭਾਸ਼ਾ ਚੁਣੋ</string>
+    <string name="personalize_profile">ਆਪਣੀ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਨਿੱਜੀ ਬਣਾਓ</string>
+    <string name="enter_name_desc">ਆਪਣੀ ਖੇਤੀ ਯਾਤਰਾ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਆਪਣਾ ਨਾਮ ਦਰਜ ਕਰੋ</string>
+    <string name="your_full_name">ਤੁਹਾਡਾ ਪੂਰਾ ਨਾਮ</string>
+    <string name="continue_btn">ਜਾਰੀ ਰੱਖੋ</string>
+    <string name="ai_consultant_title">ਨਿੱਜੀ AI ਖੇਤੀਬਾੜੀ ਸਲਾਹਕਾਰ</string>
+    <string name="ai_consultant_desc">ਮਿੱਟੀ, ਮੌਸਮ ਜਾਂ ਜੈਵਿਕ ਖੇਤੀ ਬਾਰੇ ਕੁਝ ਵੀ ਪੁੱਛੋ — ਪੂਰੀ ਤਰ੍ਹਾਂ ਔਫਲਾਈਨ ਕੰਮ ਕਰਦਾ ਹੈ।</string>
+    <string name="ai_prompt_hint">ਉਦਾਹਰਨ: ਮੈਂ ਜੈਵਿਕ ਖਾਦ ਕਿਵੇਂ ਬਣਾਵਾਂ?</string>
+    <string name="ai_suggestion_label">AI ਮਾਹਿਰ ਸੁਝਾਅ</string>
+    <string name="enter_name_error">ਕਿਰਪਾ ਕਰਕੇ ਆਪਣਾ ਨਾਮ ਦਰਜ ਕਰੋ</string>
+    <string name="search_crop_hint">ਫ਼ਸਲ ਖੋਜੋ (ਉਦਾਹਰਨ: ਅੰਬ, ਚੌਲ)...</string>
+    <string name="about_app">ਐਗਰੋਗਾਈਡੈਂਸ ਬਾਰੇ</string>
+    <string name="version">ਸੰਸਕਰਣ</string>
+
+    <!-- Crop Names -->
+    <string name="crop_mango">ਅੰਬ</string>
+    <string name="crop_wheat">ਕਣਕ</string>
+    <string name="crop_rice">ਝੋਨਾ (ਚੌਲ)</string>
+    <string name="crop_cotton">ਨਰਮਾ (ਕਪਾਹ)</string>
+
+    <!-- Issues -->
+    <string name="issue_powdery_mildew">ਚਿੱਟਾ ਰੋਗ (ਪਾਊਡਰੀ ਮਿਲਡਿਊ)</string>
+    <string name="issue_anthracnose">ਐਂਥਰਾਕਨੋਜ਼</string>
+    <string name="issue_rust">ਕੁੰਗੀ (ਰਸਟ)</string>
+    <string name="issue_loose_smut">ਕਾਂਗਿਆਰੀ (ਲੂਜ਼ ਸਮਟ)</string>
+    <string name="issue_blast">ਬਲਾਸਟ (ਝੁਲਸ ਰੋਗ)</string>
+    <string name="issue_brown_plant_hopper">ਭੂਰਾ ਟਿੱਡਾ</string>
+    <string name="issue_bollworm">ਟੀਂਡਾ ਅੱਲੀ (ਬੋਲਵਰਮ)</string>
+    <string name="issue_aphids">ਤੇਲਾ (ਅਫਿਡਸ)</string>
+
+    <!-- Solutions -->
+    <string name="sol_mango_mildew">15 ਦਿਨਾਂ ਦੇ ਵਕਫੇ ਤੇ 2 ਗ੍ਰਾਮ/ਲਿਟਰ ਘੁਲਣਸ਼ੀਲ ਗੰਧਕ ਦਾ ਛਿੜਕਾਅ ਕਰੋ।</string>
+    <string name="sol_mango_anthracnose">ਕਾਰਬੈਂਡਾਜ਼ਿਮ 1 ਗ੍ਰਾਮ/ਲਿਟਰ ਜਾਂ ਕਾਪਰ ਆਕਸੀਕਲੋਰਾਈਡ 3 ਗ੍ਰਾਮ/ਲਿਟਰ ਦਾ ਛਿੜਕਾਅ ਕਰੋ।</string>
+    <string name="sol_wheat_rust">ਰੋਧਕ ਕਿਸਮਾਂ (HD 2967) ਦੀ ਵਰਤੋਂ ਕਰੋ ਜਾਂ ਪ੍ਰੋਪੀਕੋਨਾਜ਼ੋਲ ਦਾ ਛਿੜਕਾਅ ਕਰੋ।</string>
+    <string name="sol_wheat_smut">ਵੀਟਾਵੈਕਸ (2 ਗ੍ਰਾਮ/ਕਿਲੋ ਬੀਜ) ਨਾਲ ਬੀਜ ਦੀ ਸੋਧ ਕਰੋ।</string>
+    <string name="sol_rice_blast">ਟ੍ਰਾਈਸਾਈਕਲਾਜ਼ੋਲ 0.6 ਗ੍ਰਾਮ/ਲਿਟਰ ਜਾਂ ਕਾਰਬੈਂਡਾਜ਼ਿਮ 1 ਗ੍ਰਾਮ/ਲਿਟਰ ਦਾ ਛਿੜਕਾਅ ਕਰੋ।</string>
+    <string name="sol_rice_bph">ਹਰ 2 ਮੀਟਰ ਕਤਾਰਾਂ ਵਿਚਕਾਰ 30 ਸੈਂਟੀਮੀਟਰ ਖਾਲੀ ਜਗ੍ਹਾ ਰੱਖੋ।</string>
+    <string name="sol_cotton_bollworm">ਫੇਰੋਮੋਨ ਟ੍ਰੈਪਸ ਦੀ ਵਰਤੋਂ ਕਰੋ ਅਤੇ ਸਪਿਨੋਸੈਡ 45 SC ਦਾ ਛਿੜਕਾਅ ਕਰੋ।</string>
+    <string name="sol_cotton_aphids">ਮਿਥਾਈਲ ਡੈਮੇਟਨ 2 ਮਿਲੀ/ਲਿਟਰ ਦਾ ਛਿੜਕਾਅ ਕਰੋ।</string>
+</resources>

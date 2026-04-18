@@ -14,4 +14,54 @@
     <string name="terms_service">চালিয়ে যাওয়ার মাধ্যমে, আপনি আমাদের পরিষেবার শর্তাবলীতে সম্মত হন</string>
     <string name="smart_farming_tagline">একটি টেকসই ভবিষ্যতের জন্য\nস্মার্ট চাষাবাদ</string>
     <string name="explore_now">এখনই এক্সপ্লোর করুন</string>
+    <string name="welcome">স্বাগতম</string>
+    <string name="dashboard_subtitle">আপনার কৃষি ড্যাশবোর্ড</string>
+    <string name="crops">ফসল</string>
+    <string name="solutions">সমাধান</string>
+    <string name="ready">প্রস্তুত</string>
+    <string name="offline_ai">অফলাইন এআই</string>
+    <string name="search">অনুসন্ধান</string>
+    <string name="library">লাইব্রেরি</string>
+    <string name="ai_advisor">এআই উপদেষ্টা</string>
+    <string name="app_settings">অ্যাপ সেটিংস</string>
+    <string name="language_preferences">ভাষা পছন্দ</string>
+    <string name="select_language_desc">অ্যাপের জন্য আপনার পছন্দের ভাষা নির্বাচন করুন</string>
+    <string name="personalize_profile">আপনার প্রোফাইল ব্যক্তিগতকৃত করুন</string>
+    <string name="enter_name_desc">আপনার চাষের যাত্রা শুরু করতে আপনার নাম লিখুন</string>
+    <string name="your_full_name">আপনার পুরো নাম</string>
+    <string name="continue_btn">চালিয়ে যান</string>
+    <string name="ai_consultant_title">ব্যক্তিগত এআই কৃষি পরামর্শদাতা</string>
+    <string name="ai_consultant_desc">মাটি, আবহাওয়া বা জৈব চাষ সম্পর্কে যেকোনো কিছু জিজ্ঞাসা করুন — সম্পূর্ণ অফলাইনে কাজ করে।</string>
+    <string name="ai_prompt_hint">যেমন: আমি কীভাবে জৈব সার তৈরি করব?</string>
+    <string name="ai_suggestion_label">এআই বিশেষজ্ঞ পরামর্শ</string>
+    <string name="enter_name_error">অনুগ্রহ করে আপনার নাম লিখুন</string>
+    <string name="search_crop_hint">ফসল অনুসন্ধান করুন (যেমন আম, ধান)...</string>
+    <string name="about_app">অ্যাগ্রো গাইডেন্স সম্পর্কে</string>
+    <string name="version">সংস্করণ</string>
+
+    <!-- Crop Names -->
+    <string name="crop_mango">আম</string>
+    <string name="crop_wheat">গম</string>
+    <string name="crop_rice">ধান</string>
+    <string name="crop_cotton">তুলা</string>
+
+    <!-- Issues -->
+    <string name="issue_powdery_mildew">পাউডারি মিলডিউ</string>
+    <string name="issue_anthracnose">অ্যানথ্রাকনোজ</string>
+    <string name="issue_rust">মরিচা রোগ (রাস্ট)</string>
+    <string name="issue_loose_smut">লুজ স্মাট</string>
+    <string name="issue_blast">ব্লাস্ট রোগ</string>
+    <string name="issue_brown_plant_hopper">বাদামী গাছ ফড়িং</string>
+    <string name="issue_bollworm">বলওয়ার্ম</string>
+    <string name="issue_aphids">জাব পোকা (অ্যাফিড)</string>
+
+    <!-- Solutions -->
+    <string name="sol_mango_mildew">১৫ দিনের ব্যবধানে ২ গ্রাম/লিটার জলে দ্রবণীয় সালফার স্প্রে করুন।</string>
+    <string name="sol_mango_anthracnose">কার্বেন্ডাজিম ১ গ্রাম/লিটার বা কপার অক্সিক্লোরাইড ৩ গ্রাম/লিটার স্প্রে করুন।</string>
+    <string name="sol_wheat_rust">প্রতিরোধী জাত (HD 2967) ব্যবহার করুন বা প্রোপিকোনাজোল স্প্রে করুন।</string>
+    <string name="sol_wheat_smut">ভিটাভ্যাক্স (২ গ্রাম/কেজি বীজ) দিয়ে বীজ শোধন করুন।</string>
+    <string name="sol_rice_blast">ট্রাইসাইক্লাজোল ০.৬ গ্রাম/লিটার বা কার্বেন্ডাজিম ১ গ্রাম/লিটার স্প্রে করুন।</string>
+    <string name="sol_rice_bph">প্রতি ২ মিটার সারির মধ্যে ৩০ সেমি ফাঁকা জায়গা রাখুন।</string>
+    <string name="sol_cotton_bollworm">ফেরোমোন ফাঁদ ব্যবহার করুন এবং স্পিনোস্যাড ৪৫ এসসি স্প্রে করুন।</string>
+    <string name="sol_cotton_aphids">মিথাইল ডেমেটন ২ মিলি/লিটার স্প্রে করুন।</string>
 </resources>

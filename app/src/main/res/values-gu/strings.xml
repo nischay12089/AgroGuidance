@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">એગ્રોગાઇડન્સ</string>
+    <string name="welcome_back">ફરી સ્વાગત છે</string>
+    <string name="join_us">અમારી સાથે જોડાઓ</string>
+    <string name="start_farming_journey">તમારી ખેતીની મુસાફરી શરૂ કરો</string>
+    <string name="sign_in">સાઇન ઇન કરો</string>
+    <string name="create_account">ખાતું બનાવો</string>
+    <string name="terms_service">ચાલુ રાખીને, તમે અમારી સેવાની શરતો સાથે સંમત થાઓ છો</string>
+    <string name="smart_farming_tagline">ટકાઉ ભવિષ્ય માટે\nસ્માર્ટ ખેતી</string>
+    <string name="explore_now">હમણાં અન્વેષણ કરો</string>
+    <string name="welcome">સ્વાગત</string>
+    <string name="dashboard_subtitle">તમારું કૃષિ ડેશબોર્ડ</string>
+    <string name="crops">પાક</string>
+    <string name="solutions">ઉકેલો</string>
+    <string name="ready">તૈયાર</string>
+    <string name="offline_ai">ઓફલાઇન AI</string>
+    <string name="search">શોધ</string>
+    <string name="library">લાઇબ્રેરી</string>
+    <string name="ai_advisor">AI સલાહકાર</string>
+    <string name="app_settings">એપ્લિકેશન સેટિંગ્સ</string>
+    <string name="language_preferences">ભાષા પસંદગીઓ</string>
+    <string name="select_language_desc">એપ્લિકેશન માટે તમારી પસંદગીની ભાષા પસંદ કરો</string>
+    <string name="personalize_profile">તમારી પ્રોફાઇલને વ્યક્તિગત કરો</string>
+    <string name="enter_name_desc">તમારી ખેતીની મુસાફરી શરૂ કરવા માટે તમારું નામ દાખલ કરો</string>
+    <string name="your_full_name">તમારું પૂરું નામ</string>
+    <string name="continue_btn">ચાલુ રાખો</string>
+    <string name="ai_consultant_title">વ્યક્તિગત AI ખેતી સલાહકાર</string>
+    <string name="ai_consultant_desc">જમીન, હવામાન અથવા જૈવિક ખેતી વિશે કંઈપણ પૂછો — સંપૂર્ણપણે ઓફલાઇન કામ કરે છે.</string>
+    <string name="ai_prompt_hint">દા.ત. હું જૈવિક ખાતર કેવી રીતે બનાવી શકું?</string>
+    <string name="ai_suggestion_label">AI નિષ્ણાત સૂચન</string>
+    <string name="enter_name_error">કૃપા કરીને તમારું નામ દાખલ કરો</string>
+    <string name="search_crop_hint">પાક શોધો (દા.ત. કેરી, ચોખા)...</string>
+    <string name="about_app">એગ્રોગાઇડન્સ વિશે</string>
+    <string name="version">સંસ્કરણ</string>
+
+    <!-- Crop Names -->
+    <string name="crop_mango">કેરી</string>
+    <string name="crop_wheat">ઘઉં</string>
+    <string name="crop_rice">ચોખા</string>
+    <string name="crop_cotton">કપાસ</string>
+
+    <!-- Issues -->
+    <string name="issue_powdery_mildew">પાવડરી માઇલ્ડ્યુ</string>
+    <string name="issue_anthracnose">એન્થ્રેકનોઝ</string>
+    <string name="issue_rust">ગેરુ (રસ્ટ)</string>
+    <string name="issue_loose_smut">લૂઝ સ્મટ</string>
+    <string name="issue_blast">બ્લાસ્ટ</string>
+    <string name="issue_brown_plant_hopper">બ્રાઉન પ્લાન્ટ હોપર</string>
+    <string name="issue_bollworm">ઈયળ (બોલવોર્મ)</string>
+    <string name="issue_aphids">મોલો (એફિડ્સ)</string>
+
+    <!-- Solutions -->
+    <string name="sol_mango_mildew">15 દિવસના અંતરે 2 ગ્રામ/લિટર પાણીમાં દ્રાવ્ય ગંધકનો છંટકાવ કરો.</string>
+    <string name="sol_mango_anthracnose">કાર્બેન્ડાઝીમ 1 ગ્રામ/લિટર અથવા કોપર ઓક્સિક્લોરાઇડ 3 ગ્રામ/લિટરનો છંટકાવ કરો.</string>
+    <string name="sol_wheat_rust">પ્રતિરોધક જાતો (HD 2967) નો ઉપયોગ કરો અથવા પ્રોપિકોનાઝોલનો છંટકાવ કરો.</string>
+    <string name="sol_wheat_smut">વિટાવાક્સ (2 ગ્રામ/કિલો બીજ) સાથે બીજ માવજત કરો.</string>
+    <string name="sol_rice_blast">ટ્રાયસાઇક્લાઝોલ 0.6 ગ્રામ/લિટર અથવા કાર્બેન્ડાઝીમ 1 ગ્રામ/લિટરનો છંટકાવ કરો.</string>
+    <string name="sol_rice_bph">દરેક 2 મીટરની હાર વચ્ચે 30 સેમી ખાલી જગ્યા રાખો.</string>
+    <string name="sol_cotton_bollworm">ફેરોમોન ટ્રેપ્સનો ઉપયોગ કરો અને સ્પીનોસેડ 45 SC નો છંટકાવ કરો.</string>
+    <string name="sol_cotton_aphids">મિથાઈલ ડેમેટોન 2 મિલી/લિટરનો છંટકાવ કરો.</string>
+</resources>
