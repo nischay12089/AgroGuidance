@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">ಅಗ್ರೋಗೈಡೆನ್ಸ್</string>
+    <string name="welcome_back">ಮತ್ತೆ ಸ್ವಾಗತ</string>
+    <string name="join_us">ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ</string>
+    <string name="sign_in_to_account">ನಿಮ್ಮ ಖಾತೆಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿ</string>
+    <string name="start_farming_journey">ನಿಮ್ಮ ಕೃಷಿ ಪ್ರಯಾಣವನ್ನು ಪ್ರಾರಂಭಿಸಿ</string>
+    <string name="login">ಲಾಗಿನ್</string>
+    <string name="register">ನೋಂದಣಿ</string>
+    <string name="email_address">ಇಮೇಲ್ ವಿಳಾಸ</string>
+    <string name="password">ಪಾಸ್‌ವರ್ಡ್</string>
+    <string name="forgot_password">ಪಾಸ್‌ವರ್ಡ್ ಮರೆತಿದ್ದೀರಾ?</string>
+    <string name="sign_in">ಸೈನ್ ಇನ್ ಮಾಡಿ</string>
+    <string name="create_account">ಖಾತೆಯನ್ನು ರಚಿಸಿ</string>
+    <string name="terms_service">ಮುಂದುವರಿಯುವ ಮೂಲಕ, ನೀವು ನಮ್ಮ ಸೇವಾ ನಿಯಮಗಳನ್ನು ಒಪ್ಪುತ್ತೀರಿ</string>
+    <string name="smart_farming_tagline">ಸುಸ್ಥಿರ ಭವಿಷ್ಯಕ್ಕಾಗಿ\nಸ್ಮಾರ್ಟ್ ಕೃಷಿ</string>
+    <string name="explore_now">ಈಗ ಅನ್ವೇಷಿಸಿ</string>
+    <string name="welcome">ಸ್ವಾಗತ</string>
+    <string name="dashboard_subtitle">ನಿಮ್ಮ ಕೃಷಿ ಡ್ಯಾಶ್‌ಬೋರ್ಡ್</string>
+    <string name="crops">ಬೆಳೆಗಳು</string>
+    <string name="solutions">ಪರಿಹಾರಗಳು</string>
+    <string name="ready">ಸಿದ್ಧವಾಗಿದೆ</string>
+    <string name="offline_ai">ಆಫ್‌ಲೈನ್ AI</string>
+    <string name="search">ಹುಡುಕಿ</string>
+    <string name="library">ಲೈಬ್ರರಿ</string>
+    <string name="ai_advisor">AI ಸಲಹೆಗಾರ</string>
+    <string name="app_settings">ಅಪ್ಲಿಕೇಶನ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
+    <string name="language_preferences">ಭಾಷೆಯ ಆದ್ಯತೆಗಳು</string>
+    <string name="language">ಭಾಷೆ</string>
+    <string name="select_language_desc">ಅಪ್ಲಿಕೇಶನ್‌ಗಾಗಿ ನಿಮ್ಮ ಆದ್ಯತೆಯ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="personalize_profile">ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಅನ್ನು ವೈಯಕ್ತೀಕರಿಸಿ</string>
+    <string name="enter_name_desc">ನಿಮ್ಮ ಕೃಷಿ ಪ್ರಯಾಣವನ್ನು ಪ್ರಾರಂಭಿಸಲು ನಿಮ್ಮ ಹೆಸರನ್ನು ನಮೂದಿಸಿ</string>
+    <string name="your_full_name">ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರು</string>
+    <string name="continue_btn">ಮುಂದುವರಿಸಿ</string>
+    <string name="ai_consultant_title">ವೈಯಕ್ತಿಕ AI ಕೃಷಿ ಸಲಹೆಗಾರ</string>
+    <string name="ai_consultant_desc">ಮಣ್ಣು, ಹವಾಮಾನ ಅಥವಾ ಸಾವಯವ ಕೃಷಿಯ ಬಗ್ಗೆ ಯಾವುದನ್ನಾದರೂ ಕೇಳಿ — ಸಂಪೂರ್ಣವಾಗಿ ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ।</string>
+    <string name="ai_prompt_hint">ಉದಾ: ಸಾವಯವ ಗೊಬ್ಬರವನ್ನು ತಯಾರಿಸುವುದು ಹೇಗೆ?</string>
+    <string name="ai_suggestion_label">AI ತಜ್ಞರ ಸಲಹೆ</string>
+    <string name="enter_name_error">ದಯವಿಟ್ಟು ನಿಮ್ಮ ಹೆಸರನ್ನು ನಮೂದಿಸಿ</string>
+    <string name="search_crop_hint">ಬೆಳೆಯನ್ನು ಹುಡುಕಿ (ಉದಾ: ಮಾವು, ಅಕ್ಕಿ)...</string>
+    <string name="about_app">ಅಗ್ರೋಗೈಡೆನ್ಸ್ ಬಗ್ಗೆ</string>
+    <string name="version">ಆವೃತ್ತಿ</string>
+
+    <!-- Crop Names -->
+    <string name="crop_mango">ಮಾವು</string>
+    <string name="crop_wheat">ಗೋಧಿ</string>
+    <string name="crop_rice">ಭತ್ತ (ಅಕ್ಕಿ)</string>
+    <string name="crop_cotton">ಹತ್ತಿ</string>
+
+    <!-- Issues -->
+    <string name="issue_powdery_mildew">ಬೂದಿ ರೋಗ (ಪೌಡರಿ ಮಿಲ್ಡ್ಯೂ)</string>
+    <string name="issue_anthracnose">ಕಪ್ಪು ಚುಕ್ಕೆ ರೋಗ (ಆಂಥ್ರಾಕ್ನೋಸ್)</string>
+    <string name="issue_rust">ತುಕ್ಕು ರೋಗ (ರಸ್ಟ್)</string>
+    <string name="issue_loose_smut">ಕಾಡಿಗೆ ರೋಗ (ಲೂಸ್ ಸ್ಮಟ್)</string>
+    <string name="issue_blast">ಬೆಂಕಿ ರೋಗ (ಬೆಂಕಿ ರೋಗ)</string>
+    <string name="issue_brown_plant_hopper">ಕಂದು ಜಿಗಿ ಹುಳು (ಬ್ರೌನ್ ಪ್ಲಾಂಟ್ ಹಾಪರ್)</string>
+    <string name="issue_bollworm">ಕಾಯಿ ಕೊರಕ (ಬೋಲ್ವರ್ಮ್)</string>
+    <string name="issue_aphids">ಸೇರುವೆ ಹುಳು (ಅಫಿಡ್ಸ್)</string>
+
+    <!-- Solutions -->
+    <string name="sol_mango_mildew">15 ದಿನಗಳ ಅಂತರದಲ್ಲಿ 2 ಗ್ರಾಂ/ಲೀಟರ್ ನೀರಿನಲ್ಲಿ ಕರಗುವ ಗಂಧಕವನ್ನು ಸಿಂಪಡಿಸಿ।</string>
+    <string name="sol_mango_anthracnose">ಕಾರ್ಬೆಂಡಾಜಿಮ್ 1 ಗ್ರಾಂ/ಲೀಟರ್ ಅಥವಾ ಕಾಪರ್ ಆಕ್ಸಿಕ್ಲೋರೈಡ್ 3 ಗ್ರಾಂ/ಲೀಟರ್ ಸಿಂಪಡಿಸಿ।</string>
+    <string name="sol_wheat_rust">ರೋಗ ನಿರೋಧಕ ತಳಿಗಳನ್ನು (HD 2967) ಬಳಸಿ ಅಥವಾ ಪ್ರೊಪಿಕೊನಜೋಲ್ ಸಿಂಪಡಿಸಿ।</string>
+    <string name="sol_wheat_smut">ವಿಟಾವ್ಯಾಕ್ಸ್ (2 ಗ್ರಾಂ/ಕೆಜಿ ಬೀಜ) ನೊಂದಿಗೆ ಬೀಜೋಪಚಾರ ಮಾಡಿ।</string>
+    <string name="sol_rice_blast">ಟ್ರೈಸೈಕ್ಲಾಜೋಲ್ 0.6 ಗ್ರಾಂ/ಲೀಟರ್ ಅಥವಾ ಕಾರ್ಬೆಂಡಾಜಿಮ್ 1 ಗ್ರಾಂ/ಲೀಟರ್ ಸಿಂಪಡಿಸಿ।</string>
+    <string name="sol_rice_bph">ಪ್ರತಿ 2 ಮೀಟರ್ ಸಾಲುಗಳ ನಡುವೆ 30 ಸೆಂ.ಮೀ ಖಾಲಿ ಜಾಗವನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳಿ।</string>
+    <string name="sol_cotton_bollworm">ಲಿಂಗಾಕರ್ಷಕ ಬಲೆಗಳನ್ನು ಬಳಸಿ ಮತ್ತು ಸ್ಪಿನೋಸ್ಯಾಡ್ 45 ಎಸ್‌ಸಿ ಸಿಂಪಡಿಸಿ।</string>
+    <string name="sol_cotton_aphids">ಮೀಥೈಲ್ ಡೆಮೆಟಾನ್ 2 ಮಿಲಿ/ಲೀಟರ್ ಸಿಂಪಡಿಸಿ।</string>
+</resources>

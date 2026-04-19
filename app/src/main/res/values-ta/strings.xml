@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">அக்ரோகைடன்ஸ்</string>
+    <string name="welcome_back">மீண்டும் வருக</string>
+    <string name="join_us">எங்களுடன் இணையுங்கள்</string>
+    <string name="sign_in_to_account">உங்கள் கணக்கில் உள்நுழையவும்</string>
+    <string name="start_farming_journey">உங்கள் விவசாயப் பயணத்தைத் தொடங்குங்கள்</string>
+    <string name="login">உள்நுழைவு</string>
+    <string name="register">பதிவு</string>
+    <string name="email_address">மின்னஞ்சல் முகவரி</string>
+    <string name="password">கடவுச்சொல்</string>
+    <string name="forgot_password">கடவுச்சொல்லை மறந்துவிட்டீர்களா?</string>
+    <string name="sign_in">உள்நுழைக</string>
+    <string name="create_account">கணக்கை உருவாக்கு</string>
+    <string name="terms_service">தொடர்வதன் மூலம், எங்கள் சேவை விதிமுறைகளை ஏற்கிறீர்கள்</string>
+    <string name="smart_farming_tagline">நிலையான எதிர்காலத்திற்காக\nஸ்மார்ட் விவசாயம்</string>
+    <string name="explore_now">இப்போதே ஆராயுங்கள்</string>
+    <string name="welcome">வரவேற்பு</string>
+    <string name="dashboard_subtitle">உங்கள் விவசாய டாஷ்போர்டு</string>
+    <string name="crops">பயிர்கள்</string>
+    <string name="solutions">தீர்வுகள்</string>
+    <string name="ready">தயார்</string>
+    <string name="offline_ai">ஆஃப்லைன் AI</string>
+    <string name="search">தேடல்</string>
+    <string name="library">நூலகம்</string>
+    <string name="ai_advisor">AI ஆலோசகர்</string>
+    <string name="app_settings">பயன்பாட்டு அமைப்புகள்</string>
+    <string name="language_preferences">மொழி விருப்பத்தேர்வுகள்</string>
+    <string name="language">மொழி</string>
+    <string name="select_language_desc">பயன்பாட்டிற்கான உங்கள் விருப்ப மொழியைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="personalize_profile">உங்கள் சுயவிவரத்தைத் தனிப்பயனாக்குங்கள்</string>
+    <string name="enter_name_desc">உங்கள் விவசாயப் பயணத்தைத் தொடங்க உங்கள் பெயரை உள்ளிடவும்</string>
+    <string name="your_full_name">உங்கள் முழு பெயர்</string>
+    <string name="continue_btn">தொடரவும்</string>
+    <string name="ai_consultant_title">தனிப்பட்ட AI விவசாய ஆலோசகர்</string>
+    <string name="ai_consultant_desc">மண், வானிலை அல்லது இயற்கை விவசாயம் பற்றி எதையும் கேளுங்கள் — முற்றிலும் ஆஃப்லைனில் வேலை செய்கிறது.</string>
+    <string name="ai_prompt_hint">உதாரணமாக: இயற்கை உரத்தை நான் எப்படி தயாரிப்பது?</string>
+    <string name="ai_suggestion_label">AI நிபுணர் பரிந்துரை</string>
+    <string name="enter_name_error">உங்கள் பெயரை உள்ளிடவும்</string>
+    <string name="search_crop_hint">பயிரைத் தேடுங்கள் (உதாரணம்: மாம்பழம், அரிசி)...</string>
+    <string name="about_app">அக்ரோகைடன்ஸ் பற்றி</string>
+    <string name="version">பதிப்பு</string>
+
+    <!-- Crop Names -->
+    <string name="crop_mango">மாம்பழம்</string>
+    <string name="crop_wheat">கோதுமை</string>
+    <string name="crop_rice">நெல் (அரிசி)</string>
+    <string name="crop_cotton">பருத்தி</string>
+
+    <!-- Issues -->
+    <string name="issue_powdery_mildew">சாம்பல் நோய் (பவுடரி மில்டியூ)</string>
+    <string name="issue_anthracnose">கருகல் நோய் (ஆந்த்ராக்னோஸ்)</string>
+    <string name="issue_rust">துரு நோய் (ரஸ்ட்)</string>
+    <string name="issue_loose_smut">லூஸ் ஸ்மட்</string>
+    <string name="issue_blast">குலை நோய் (பிளாஸ்ட்)</string>
+    <string name="issue_brown_plant_hopper">புகையான் (பிரவுன் பிளான்ட் ஹாப்பர்)</string>
+    <string name="issue_bollworm">காய்ப்புழு (போல்வோர்ம்)</string>
+    <string name="issue_aphids">அசுவினி (அஃபிட்ஸ்)</string>
+
+    <!-- Solutions -->
+    <string name="sol_mango_mildew">15 நாட்கள் இடைவெளியில் 2 கிராம்/லிட்டர் நனைக்கும் கந்தகத்தைத் தெளிக்கவும்.</string>
+    <string name="sol_mango_anthracnose">கார்பென்டாசிம் 1 கிராம்/லிட்டர் அல்லது காப்பர் ஆக்ஸிகுளோரைடு 3 கிராம்/லிட்டர் தெளிக்கவும்.</string>
+    <string name="sol_wheat_rust">எதிர்ப்புத் திறன் கொண்ட ரகங்களை (HD 2967) பயன்படுத்தவும் அல்லது புரோப்பிகோனசோலைத் தெளிக்கவும்.</string>
+    <string name="sol_wheat_smut">விட்டாவாக்ஸ் (2 கிராம்/கிலோ விதை) கொண்டு விதை நேர்த்தி செய்யவும்.</string>
+    <string name="sol_rice_blast">ட்ரைசைக்ளசோல் 0.6 கிராம்/லிட்டர் அல்லது கார்பென்டாசிம் 1 கிராம்/லிட்டர் தெளிக்கவும்.</string>
+    <string name="sol_rice_bph">ஒவ்வொரு 2 மீட்டர் வரிசைகளுக்கு இடையிலும் 30 செ.மீ இடைவெளி விடவும்.</string>
+    <string name="sol_cotton_bollworm">பெரோமோன் பொறிகளைப் பயன்படுத்தவும் மற்றும் ஸ்பினோசாட் 45 எஸ்சி தெளிக்கவும்.</string>
+    <string name="sol_cotton_aphids">மெத்தில் டெமெட்டான் 2 மி.லி/லிட்டர் தெளிக்கவும்.</string>
+</resources>

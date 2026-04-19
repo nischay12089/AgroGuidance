@@ -14,4 +14,55 @@
     <string name="terms_service">By continuing, you agree to our Terms of Service</string>
     <string name="smart_farming_tagline">Smart Farming for a\nSustainable Future</string>
     <string name="explore_now">Explore Now</string>
+    <string name="welcome">Welcome</string>
+    <string name="dashboard_subtitle">Your Agricultural Dashboard</string>
+    <string name="crops">Crops</string>
+    <string name="solutions">Solutions</string>
+    <string name="ready">Ready</string>
+    <string name="offline_ai">Offline AI</string>
+    <string name="search">Search</string>
+    <string name="library">Library</string>
+    <string name="ai_advisor">AI Advisor</string>
+    <string name="app_settings">App Settings</string>
+    <string name="language_preferences">Language Preferences</string>
+    <string name="language">Language</string>
+    <string name="select_language_desc">Select your preferred language for the app</string>
+    <string name="personalize_profile">Personalize Your Profile</string>
+    <string name="enter_name_desc">Enter your name to start your farming journey</string>
+    <string name="your_full_name">Your Full Name</string>
+    <string name="continue_btn">Continue</string>
+    <string name="ai_consultant_title">Personal AI Farming Consultant</string>
+    <string name="ai_consultant_desc">Ask anything about soil, weather, or organic farming — works completely offline.</string>
+    <string name="ai_prompt_hint">e.g. How do I make organic fertilizer?</string>
+    <string name="ai_suggestion_label">AI Expert Suggestion</string>
+    <string name="enter_name_error">Please enter your name</string>
+    <string name="search_crop_hint">Search crop (e.g. Mango, Rice)...</string>
+    <string name="about_app">About AgroGuidance</string>
+    <string name="version">Version</string>
+
+    <!-- Crop Names -->
+    <string name="crop_mango">Mango</string>
+    <string name="crop_wheat">Wheat</string>
+    <string name="crop_rice">Rice</string>
+    <string name="crop_cotton">Cotton</string>
+
+    <!-- Issues -->
+    <string name="issue_powdery_mildew">Powdery Mildew</string>
+    <string name="issue_anthracnose">Anthracnose</string>
+    <string name="issue_rust">Rust</string>
+    <string name="issue_loose_smut">Loose Smut</string>
+    <string name="issue_blast">Blast</string>
+    <string name="issue_brown_plant_hopper">Brown Plant Hopper</string>
+    <string name="issue_bollworm">Bollworm</string>
+    <string name="issue_aphids">Aphids</string>
+
+    <!-- Solutions -->
+    <string name="sol_mango_mildew">Spray wettable sulphur 2g/lit at 15 days interval.</string>
+    <string name="sol_mango_anthracnose">Spray Carbendazim 1g/lit or Copper Oxychloride 3g/lit.</string>
+    <string name="sol_wheat_rust">Use resistant varieties (HD 2967) or spray Propiconazole.</string>
+    <string name="sol_wheat_smut">Seed treatment with Vitavax (2g/kg seed).</string>
+    <string name="sol_rice_blast">Spray Tricyclazole 0.6g/lit or Carbendazim 1g/lit.</string>
+    <string name="sol_rice_bph">Maintain 30cm clear space between every 2m rows.</string>
+    <string name="sol_cotton_bollworm">Use pheromone traps and spray Spinosad 45 SC.</string>
+    <string name="sol_cotton_aphids">Spray Methyl Demeton 2ml/lit.</string>
 </resources>

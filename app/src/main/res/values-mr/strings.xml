@@ -14,4 +14,55 @@
     <string name="terms_service">पुढील सुरू ठेवून, आपण आमच्या सेवा अटींशी सहमत आहात</string>
     <string name="smart_farming_tagline">शाश्वत भविष्यासाठी\nस्मार्ट शेती</string>
     <string name="explore_now">आता एक्सप्लोर करा</string>
+    <string name="welcome">स्वागत आहे</string>
+    <string name="dashboard_subtitle">तुमचा कृषी डॅशबोर्ड</string>
+    <string name="crops">पिके</string>
+    <string name="solutions">उपाय</string>
+    <string name="ready">तयार</string>
+    <string name="offline_ai">ऑफलाइन एआय</string>
+    <string name="search">शोध</string>
+    <string name="library">ग्रंथालय</string>
+    <string name="ai_advisor">एआय सल्लागार</string>
+    <string name="app_settings">अॅप सेटिंग्ज</string>
+    <string name="language_preferences">भाषा प्राधान्ये</string>
+    <string name="language">भाषा</string>
+    <string name="select_language_desc">अॅपसाठी तुमची पसंतीची भाषा निवडा</string>
+    <string name="personalize_profile">तुमचे प्रोफाइल वैयक्तिकृत करा</string>
+    <string name="enter_name_desc">तुमचा शेतीचा प्रवास सुरू करण्यासाठी तुमचे नाव टाका</string>
+    <string name="your_full_name">तुमचे पूर्ण नाव</string>
+    <string name="continue_btn">सुरू ठेवा</string>
+    <string name="ai_consultant_title">वैयक्तिक एआय शेती सल्लागार</string>
+    <string name="ai_consultant_desc">माती, हवामान किंवा सेंद्रिय शेतीबद्दल काहीही विचारा — पूर्णपणे ऑफलाइन कार्य करते.</string>
+    <string name="ai_prompt_hint">उदा. मी सेंद्रिय खत कसे बनवू?</string>
+    <string name="ai_suggestion_label">एआय तज्ञ सूचना</string>
+    <string name="enter_name_error">कृपया आपले नाव प्रविष्ट करा</string>
+    <string name="search_crop_hint">पीक शोधा (उदा. आंबा, भात)...</string>
+    <string name="about_app">एग्रोगाइडन्सबद्दल</string>
+    <string name="version">आवृत्ती</string>
+
+    <!-- Crop Names -->
+    <string name="crop_mango">आंबा</string>
+    <string name="crop_wheat">गहू</string>
+    <string name="crop_rice">भात</string>
+    <string name="crop_cotton">कापूस</string>
+
+    <!-- Issues -->
+    <string name="issue_powdery_mildew">भुईमुगावरील भुरी (पाउडरी मिल्ड्यू)</string>
+    <string name="issue_anthracnose">करपा (अँथ्रॅकनोज)</string>
+    <string name="issue_rust">तांबेरा (रस्ट)</string>
+    <string name="issue_loose_smut">काणी (लूज स्मट)</string>
+    <string name="issue_blast">करपा (ब्लास्ट)</string>
+    <string name="issue_brown_plant_hopper">तूडतुडे (ब्राऊन प्लांट हॉपर)</string>
+    <string name="issue_bollworm">बोंड अळी (बोलवॉर्म)</string>
+    <string name="issue_aphids">मावा (अॅफिड्स)</string>
+
+    <!-- Solutions -->
+    <string name="sol_mango_mildew">१५ दिवसांच्या अंतराने २ ग्रॅम/लिटर पाण्यात विरघळणारे गंधक फवारावे.</string>
+    <string name="sol_mango_anthracnose">कार्बेन्डाझिम १ ग्रॅम/लिटर किंवा कॉपर ऑक्सीक्लोराईड ३ ग्रॅम/लिटर फवारावे.</string>
+    <string name="sol_wheat_rust">रोगप्रतिकारक जाती (HD 2967) वापरा किंवा प्रोपिकोनाझोल फवारावे.</string>
+    <string name="sol_wheat_smut">विटावॅक्स (२ ग्रॅम/किलो बियाणे) प्रक्रिया करून बीजप्रक्रिया करा.</string>
+    <string name="sol_rice_blast">ट्रायसायक्लाझोल ०.६ ग्रॅम/लिटर किंवा कार्बेन्डाझिम १ ग्रॅम/लिटर फवारावे.</string>
+    <string name="sol_rice_bph">प्रत्येक २ मीटर ओळींमध्ये ३० सेमी मोकळी जागा ठेवा.</string>
+    <string name="sol_cotton_bollworm">कामगंध सापळे वापरा आणि स्पिनोसॅड ४५ एससी फवारावे.</string>
+    <string name="sol_cotton_aphids">मिथाईल डिमेटॉन २ मिली/लिटर फवारावे.</string>
 </resources>
