@@ -37,9 +37,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.foundation.Image
-import androidx.compose.ui.res.painterResource
-import com.nxtbitz.agroguidance.data.User
+import com.nxtbitz.agroguidance.data.*
 import com.nxtbitz.agroguidance.ui.theme.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
@@ -48,12 +46,13 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.automirrored.filled.*
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
+import androidx.lifecycle.viewmodel.compose.viewModel
+
 
 class MainActivity : AppCompatActivity() {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        // This prevents the flicker by handling the change manually
         val locales = AppCompatDelegate.getApplicationLocales()
         if (!locales.isEmpty) {
             val configuration = Configuration(newConfig)
@@ -311,29 +310,12 @@ fun UserPage(onNameSubmitted: (String) -> Unit) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomePage(userName: String) {
+fun HomePage(userName: String, viewModel: CropViewModel = viewModel()) {
     var selectedTab by rememberSaveable { mutableIntStateOf(0) }
     var showSettings by rememberSaveable { mutableStateOf(false) }
-    val tabs = listOf("Search", "Library", "AI Advisor")
+    val tabs = listOf("Search", "Library", "AI Advisor", "Database")
     
-    val cropDatabase = mapOf(
-        stringResource(R.string.crop_mango) to mapOf(
-            stringResource(R.string.issue_powdery_mildew) to stringResource(R.string.sol_mango_mildew),
-            stringResource(R.string.issue_anthracnose) to stringResource(R.string.sol_mango_anthracnose)
-        ),
-        stringResource(R.string.crop_wheat) to mapOf(
-            stringResource(R.string.issue_rust) to stringResource(R.string.sol_wheat_rust),
-            stringResource(R.string.issue_loose_smut) to stringResource(R.string.sol_wheat_smut)
-        ),
-        stringResource(R.string.crop_rice) to mapOf(
-            stringResource(R.string.issue_blast) to stringResource(R.string.sol_rice_blast),
-            stringResource(R.string.issue_brown_plant_hopper) to stringResource(R.string.sol_rice_bph)
-        ),
-        stringResource(R.string.crop_cotton) to mapOf(
-            stringResource(R.string.issue_bollworm) to stringResource(R.string.sol_cotton_bollworm),
-            stringResource(R.string.issue_aphids) to stringResource(R.string.sol_cotton_aphids)
-        )
-    )
+    val cropsWithIssues by viewModel.cropsWithIssues.collectAsState(initial = emptyList())
 
     Column(
         modifier = Modifier
@@ -376,12 +358,12 @@ fun HomePage(userName: String) {
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             StatCard(
-                value = "${cropDatabase.size}",
+                value = "${cropsWithIssues.size}",
                 label = stringResource(R.string.crops),
                 modifier = Modifier.weight(1f)
             )
             StatCard(
-                value = "${cropDatabase.values.sumOf { it.size }}",
+                value = "${cropsWithIssues.sumOf { it.issues.size }}",
                 label = stringResource(R.string.solutions),
                 modifier = Modifier.weight(1f)
             )
@@ -396,10 +378,11 @@ fun HomePage(userName: String) {
         Spacer(modifier = Modifier.height(24.dp))
 
         // Tabs
-        TabRow(
+        ScrollableTabRow(
             selectedTabIndex = selectedTab,
             containerColor = Color.Transparent,
             contentColor = PrimaryGreen,
+            edgePadding = 16.dp,
             indicator = { tabPositions ->
                 if (selectedTab < tabPositions.size) {
                     TabRowDefaults.SecondaryIndicator(
@@ -420,6 +403,7 @@ fun HomePage(userName: String) {
                                 0 -> stringResource(R.string.search)
                                 1 -> stringResource(R.string.library)
                                 2 -> stringResource(R.string.ai_advisor)
+                                3 -> "Database"
                                 else -> title
                             },
                             style = TextStyle(
@@ -435,9 +419,10 @@ fun HomePage(userName: String) {
         // Tab Content
         Box(modifier = Modifier.weight(1f)) {
             when (selectedTab) {
-                0 -> SearchTab(cropDatabase)
-                1 -> LibraryTab(cropDatabase)
+                0 -> SearchTab(cropsWithIssues)
+                1 -> LibraryTab(cropsWithIssues, viewModel)
                 2 -> AiAdvisorTab()
+                3 -> DatabaseTab(viewModel)
             }
         }
     }
@@ -449,6 +434,138 @@ fun HomePage(userName: String) {
             dragHandle = { BottomSheetDefaults.DragHandle(color = Color.Gray) }
         ) {
             SettingsContent()
+        }
+    }
+}
+
+@Composable
+fun DatabaseTab(viewModel: CropViewModel) {
+    var cropName by remember { mutableStateOf("") }
+    var selectedCropId by remember { mutableStateOf<Int?>(null) }
+    var issueName by remember { mutableStateOf("") }
+    var solution by remember { mutableStateOf("") }
+    
+    val crops by viewModel.allCrops.collectAsState(initial = emptyList())
+    val isSyncing by viewModel.isSyncing.collectAsState()
+    val context = LocalContext.current
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+            .verticalScroll(rememberScrollState())
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = "➕ Add New Crop",
+                style = TextStyle(color = Color.White, fontWeight = FontWeight.Bold, fontSize = 18.sp)
+            )
+            
+            IconButton(
+                onClick = {
+                    viewModel.syncFromFirebase { success ->
+                        if (success) {
+                            Toast.makeText(context, "Sync Completed", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(context, "Sync Failed", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                },
+                enabled = !isSyncing,
+                modifier = Modifier.background(TextFieldBg, RoundedCornerShape(12.dp))
+            ) {
+                if (isSyncing) {
+                    CircularProgressIndicator(modifier = Modifier.size(24.dp), color = PrimaryGreen, strokeWidth = 2.dp)
+                } else {
+                    Icon(Icons.Default.Sync, contentDescription = "Sync from Firebase", tint = Color.White)
+                }
+            }
+        }
+        
+        Spacer(modifier = Modifier.height(8.dp))
+        AuthTextField(
+            value = cropName,
+            onValueChange = { cropName = it },
+            hint = "Crop Name (e.g. Rice, Wheat)"
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        Button(
+            onClick = {
+                if (cropName.isNotBlank()) {
+                    viewModel.addCrop(cropName)
+                    cropName = ""
+                }
+            },
+            modifier = Modifier.fillMaxWidth(),
+            colors = ButtonDefaults.buttonColors(containerColor = PrimaryGreen)
+        ) {
+            Text("Add Crop")
+        }
+
+        Spacer(modifier = Modifier.height(24.dp))
+        HorizontalDivider(color = Color.Gray.copy(alpha = 0.3f))
+        Spacer(modifier = Modifier.height(24.dp))
+
+        Text(
+            text = "➕ Add Issue & Solution",
+            style = TextStyle(color = Color.White, fontWeight = FontWeight.Bold, fontSize = 18.sp)
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        
+        Text("Select Crop:", color = Color.Gray, fontSize = 12.sp)
+        Box(modifier = Modifier.fillMaxWidth().heightIn(max = 150.dp).background(TextFieldBg, RoundedCornerShape(12.dp)).padding(4.dp)) {
+            LazyColumn {
+                items(crops) { crop ->
+                    Text(
+                        text = crop.name,
+                        color = if (selectedCropId == crop.id) PrimaryGreen else Color.White,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { selectedCropId = crop.id }
+                            .padding(8.dp)
+                    )
+                }
+            }
+        }
+        
+        Spacer(modifier = Modifier.height(12.dp))
+        AuthTextField(
+            value = issueName,
+            onValueChange = { issueName = it },
+            hint = "Issue Name (e.g. Blast Disease)"
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+        AuthTextField(
+            value = solution,
+            onValueChange = { solution = it },
+            hint = "Solution Details"
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+        
+        Button(
+            onClick = {
+                val cropId = selectedCropId
+                if (cropId != null && issueName.isNotBlank() && solution.isNotBlank()) {
+                    viewModel.addIssue(cropId, issueName, solution)
+                    issueName = ""
+                    solution = ""
+                }
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(56.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = PrimaryGreen),
+            enabled = selectedCropId != null,
+            shape = RoundedCornerShape(12.dp)
+        ) {
+            Text(
+                "Submit Issue & Solution",
+                style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 16.sp)
+            )
         }
     }
 }
@@ -488,8 +605,7 @@ fun SettingsContent() {
                 .fillMaxWidth()
                 .background(TextFieldBg, RoundedCornerShape(12.dp))
                 .padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
+            verticalAlignment = Alignment.CenterVertically) {
             Icon(Icons.Default.Info, contentDescription = null, tint = PrimaryGreen)
             Spacer(modifier = Modifier.width(12.dp))
             Column {
@@ -601,9 +717,9 @@ fun StatCard(
 }
 
 @Composable
-fun SearchTab(db: Map<String, Map<String, String>>) {
+fun SearchTab(cropsWithIssues: List<CropWithIssues>) {
     var query by remember { mutableStateOf("") }
-    val results = db.entries.filter { it.key.contains(query, ignoreCase = true) }
+    val results = cropsWithIssues.filter { it.crop.name.contains(query, ignoreCase = true) }
 
     Column(modifier = Modifier.padding(16.dp)) {
         AuthTextField(
@@ -623,13 +739,13 @@ fun SearchTab(db: Map<String, Map<String, String>>) {
         Spacer(modifier = Modifier.height(16.dp))
         
         LazyColumn(verticalArrangement = Arrangement.spacedBy(16.dp)) {
-            items(results.toList()) { crop ->
+            items(results) { item ->
                 Column {
                     Text(
-                        text = "📍 ${crop.key}",
+                        text = "📍 ${item.crop.name}",
                         style = TextStyle(color = PrimaryGreen, fontWeight = FontWeight.Bold, fontSize = 18.sp)
                     )
-                    crop.value.forEach { (issue, solution) ->
+                    item.issues.forEach { issue ->
                         Card(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -638,11 +754,11 @@ fun SearchTab(db: Map<String, Map<String, String>>) {
                         ) {
                             Column(modifier = Modifier.padding(12.dp)) {
                                 Text(
-                                    text = "⚠️ $issue",
+                                    text = "⚠️ ${issue.issueName}",
                                     style = TextStyle(color = Color.White, fontWeight = FontWeight.Bold)
                                 )
                                 Text(
-                                    text = solution,
+                                    text = issue.solution,
                                     style = TextStyle(color = Color(0xFFD1FAE5), fontSize = 14.sp)
                                 )
                             }
@@ -655,42 +771,79 @@ fun SearchTab(db: Map<String, Map<String, String>>) {
 }
 
 @Composable
-fun LibraryTab(db: Map<String, Map<String, String>>) {
-    val crops = db.keys.sorted()
-    LazyColumn(modifier = Modifier.fillMaxSize()) {
-        items(crops) { crop ->
-            var expanded by remember { mutableStateOf(false) }
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .clickable { expanded = !expanded }
-                    .padding(16.dp)
-            ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(
-                        text = "🌿 $crop",
-                        style = TextStyle(color = Color.White, fontSize = 16.sp),
-                        modifier = Modifier.weight(1f)
-                    )
-                    Icon(
-                        imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
-                        contentDescription = null,
-                        tint = Color.Gray
-                    )
+fun LibraryTab(cropsWithIssues: List<CropWithIssues>, viewModel: CropViewModel) {
+    val isSyncing by viewModel.isSyncing.collectAsState()
+    val context = LocalContext.current
+
+    if (cropsWithIssues.isEmpty()) {
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.padding(32.dp)) {
+                Icon(Icons.AutoMirrored.Filled.LibraryBooks, contentDescription = null, tint = Color.Gray, modifier = Modifier.size(64.dp))
+                Spacer(modifier = Modifier.height(16.dp))
+                Text("Your library is empty", color = Color.Gray, textAlign = TextAlign.Center)
+                Spacer(modifier = Modifier.height(24.dp))
+                Button(
+                    onClick = {
+                        viewModel.syncFromFirebase { success ->
+                            if (success) {
+                                Toast.makeText(context, "Data fetched successfully", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(context, "Failed to fetch data", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    },
+                    enabled = !isSyncing,
+                    colors = ButtonDefaults.buttonColors(containerColor = PrimaryGreen),
+                    shape = RoundedCornerShape(12.dp),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    if (isSyncing) {
+                        CircularProgressIndicator(modifier = Modifier.size(20.dp), color = Color.White, strokeWidth = 2.dp)
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("Fetching...")
+                    } else {
+                        Text("Fetch Data from Database")
+                    }
                 }
-                AnimatedVisibility(visible = expanded) {
-                    Column(modifier = Modifier.padding(top = 8.dp)) {
-                        db[crop]?.forEach { (issue, solution) ->
-                            HorizontalDivider(color = Color.White.copy(alpha = 0.1f))
-                            Column(modifier = Modifier.padding(vertical = 8.dp)) {
-                                Text(
-                                    text = "⚠️ $issue",
-                                    style = TextStyle(color = Color.White, fontWeight = FontWeight.Bold)
-                                )
-                                Text(
-                                    text = solution,
-                                    style = TextStyle(color = Color(0xFFA7F3D0), fontSize = 14.sp)
-                                )
+            }
+        }
+    } else {
+        val items = cropsWithIssues.sortedBy { it.crop.name }
+        LazyColumn(modifier = Modifier.fillMaxSize()) {
+            items(items) { item ->
+                var expanded by remember { mutableStateOf(false) }
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { expanded = !expanded }
+                        .padding(16.dp)
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text(
+                            text = "🌿 ${item.crop.name}",
+                            style = TextStyle(color = Color.White, fontSize = 16.sp),
+                            modifier = Modifier.weight(1f)
+                        )
+                        Icon(
+                            imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                            contentDescription = null,
+                            tint = Color.Gray
+                        )
+                    }
+                    AnimatedVisibility(visible = expanded) {
+                        Column(modifier = Modifier.padding(top = 8.dp)) {
+                            item.issues.forEach { issue ->
+                                HorizontalDivider(color = Color.White.copy(alpha = 0.1f))
+                                Column(modifier = Modifier.padding(vertical = 8.dp)) {
+                                    Text(
+                                        text = "⚠️ ${issue.issueName}",
+                                        style = TextStyle(color = Color.White, fontWeight = FontWeight.Bold)
+                                    )
+                                    Text(
+                                        text = issue.solution,
+                                        style = TextStyle(color = Color(0xFFA7F3D0), fontSize = 14.sp)
+                                    )
+                                }
                             }
                         }
                     }
@@ -786,31 +939,6 @@ fun AiAdvisorTab() {
     }
 }
 
-
-@Composable
-fun TabButton(label: String, isActive: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier) {
-    Box(
-        modifier = modifier
-            .clip(RoundedCornerShape(8.dp))
-            .background(
-                if (isActive) Brush.linearGradient(listOf(PrimaryGreen, SecondaryGreen))
-                else Brush.linearGradient(listOf(Color.Transparent, Color.Transparent))
-            )
-            .clickable { onClick() }
-            .padding(vertical = 12.dp),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(
-            text = label,
-            style = TextStyle(
-                color = if (isActive) Color.White else Color.Gray,
-                fontWeight = FontWeight.Bold,
-                fontSize = 14.sp
-            )
-        )
-    }
-}
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AuthTextField(
@@ -841,22 +969,4 @@ fun AuthTextField(
         ),
         singleLine = true
     )
-}
-
-@Composable
-fun SubmitButton(isLoginTab: Boolean, onClick: () -> Unit) {
-    Button(
-        onClick = onClick,
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(56.dp),
-        shape = RoundedCornerShape(16.dp),
-        colors = ButtonDefaults.buttonColors(containerColor = PrimaryGreen),
-        elevation = ButtonDefaults.buttonElevation(defaultElevation = 8.dp)
-    ) {
-        Text(
-            text = stringResource(if (isLoginTab) R.string.sign_in else R.string.create_account),
-            style = TextStyle(fontWeight = FontWeight.Bold, color = Color.White, fontSize = 16.sp)
-        )
-    }
 }

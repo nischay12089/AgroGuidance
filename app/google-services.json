@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "100000000000",
+    "project_id": "agro-data-set",
+    "firebase_url": "https://agro-data-set-default-rtdb.firebaseio.com",
+    "storage_bucket": "agro-data-set.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100000000000:android:abcdef1234567890",
+        "android_client_info": {
+          "package_name": "com.nxtbitz.agroguidance"
+        }
+      },
+      "api_key": [
+        {
+          "current_key": "dummy_api_key_replace_me"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
