@@ -2,7 +2,13 @@
     <string name="app_name">એગ્રોગાઇડન્સ</string>
     <string name="welcome_back">ફરી સ્વાગત છે</string>
     <string name="join_us">અમારી સાથે જોડાઓ</string>
+    <string name="sign_in_to_account">તમારા ખાતામાં સાઇન ઇન કરો</string>
     <string name="start_farming_journey">તમારી ખેતીની મુસાફરી શરૂ કરો</string>
+    <string name="login">લોગિન</string>
+    <string name="register">નોંધણી</string>
+    <string name="email_address">ઇમેઇલ સરનામું</string>
+    <string name="password">પાસવર્ડ</string>
+    <string name="forgot_password">પાસવર્ડ ભૂલી ગયા છો?</string>
     <string name="sign_in">સાઇન ઇન કરો</string>
     <string name="create_account">ખાતું બનાવો</string>
     <string name="terms_service">ચાલુ રાખીને, તમે અમારી સેવાની શરતો સાથે સંમત થાઓ છો</string>
@@ -19,6 +25,7 @@
     <string name="ai_advisor">AI સલાહકાર</string>
     <string name="app_settings">એપ્લિકેશન સેટિંગ્સ</string>
     <string name="language_preferences">ભાષા પસંદગીઓ</string>
+    <string name="language">ભાષા</string>
     <string name="select_language_desc">એપ્લિકેશન માટે તમારી પસંદગીની ભાષા પસંદ કરો</string>
     <string name="personalize_profile">તમારી પ્રોફાઇલને વ્યક્તિગત કરો</string>
     <string name="enter_name_desc">તમારી ખેતીની મુસાફરી શરૂ કરવા માટે તમારું નામ દાખલ કરો</string>

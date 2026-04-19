@@ -2,7 +2,13 @@
     <string name="app_name">అగ్రోగైడెన్స్</string>
     <string name="welcome_back">తిరిగి స్వాగతం</string>
     <string name="join_us">మాతో చేరండి</string>
+    <string name="sign_in_to_account">మీ ఖాతాలోకి సైన్ ఇన్ చేయండి</string>
     <string name="start_farming_journey">మీ వ్యవసాయ ప్రయాణాన్ని ప్రారంభించండి</string>
+    <string name="login">లాగిన్</string>
+    <string name="register">రిజిస్టర్</string>
+    <string name="email_address">ఈమెయిల్ చిరునామా</string>
+    <string name="password">పాస్‌వర్డ్</string>
+    <string name="forgot_password">పాస్‌వర్డ్ మర్చిపోయారా?</string>
     <string name="sign_in">సైన్ ఇన్ చేయండి</string>
     <string name="create_account">ఖాతాను సృష్టించండి</string>
     <string name="terms_service">కొనసాగడం ద్వారా, మీరు మా సేవా నిబంధనలకు అంగీకరిస్తున్నారు</string>
@@ -19,13 +25,14 @@
     <string name="ai_advisor">AI సలహాదారు</string>
     <string name="app_settings">యాప్ సెట్టింగ్‌లు</string>
     <string name="language_preferences">భాష ప్రాధాన్యతలు</string>
+    <string name="language">భాష</string>
     <string name="select_language_desc">యాప్ కోసం మీకు నచ్చిన భాషను ఎంచుకోండి</string>
     <string name="personalize_profile">మీ ప్రొఫైల్‌ను వ్యక్తిగతీకరించండి</string>
     <string name="enter_name_desc">మీ వ్యవసాయ ప్రయాణాన్ని ప్రారంభించడానికి మీ పేరును నమోదు చేయండి</string>
     <string name="your_full_name">మీ పూర్తి పేరు</string>
     <string name="continue_btn">కొనసాగించండి</string>
     <string name="ai_consultant_title">వ్యక్తిగత AI వ్యవసాయ సలహాదారు</string>
-    <string name="ai_consultant_desc">నేల, వాతావరణం లేదా సేంద్రీయ వ్యవసాయం గురించి ఏదైనా అడగండి — పూర్తిగా ఆఫ్‌లైన్‌లో పని చేస్తుంది.</string>
+    <string name="ai_consultant_desc">నేల, వాతావరణం లేదా సేంద్రీయ వ్యవసాయం గురించి ఏదైనా అడగండి — పూర్తిగా ఆఫ్‌లైన్‌లో పని చేస్తుంది।</string>
     <string name="ai_prompt_hint">ఉదా: నేను సేంద్రీయ ఎరువును ఎలా తయారు చేయాలి?</string>
     <string name="ai_suggestion_label">AI నిపుణుల సూచన</string>
     <string name="enter_name_error">దయచేసి మీ పేరును నమోదు చేయండి</string>
@@ -50,12 +57,12 @@
     <string name="issue_aphids">పేనుబంక (అఫిడ్స్)</string>
 
     <!-- Solutions -->
-    <string name="sol_mango_mildew">15 రోజుల వ్యవధిలో 2 గ్రా/లీటరు చొప్పున నీటిలో కరిగే గంధకాన్ని పిచికారీ చేయండి.</string>
-    <string name="sol_mango_anthracnose">కార్బెండజిమ్ 1 గ్రా/లీటరు లేదా కాపర్ ఆక్సిక్లోరైడ్ 3 గ్రా/లీటరు పిచికారీ చేయండి.</string>
-    <string name="sol_wheat_rust">నిరోధక రకాలను (HD 2967) ఉపయోగించండి లేదా ప్రోపికోనజోల్ పిచికారీ చేయండి.</string>
-    <string name="sol_wheat_smut">విటావాక్స్‌తో (2 గ్రా/కేజీ విత్తనం) విత్తన శుద్ధి చేయండి.</string>
-    <string name="sol_rice_blast">ట్రైసైక్లాజోల్ 0.6 గ్రా/లీటరు లేదా కార్బెండజిమ్ 1 గ్రా/లీటరు పిచికారీ చేయండి.</string>
-    <string name="sol_rice_bph">ప్రతి 2 మీటర్ల వరుసల మధ్య 30 సెం.మీ ఖాళీ స్థలాన్ని ఉంచండి.</string>
-    <string name="sol_cotton_bollworm">ఫెరోమోన్ ట్రాప్స్ ఉపయోగించండి మరియు స్పినోసాడ్ 45 ఎస్సీ పిచికారీ చేయండి.</string>
-    <string name="sol_cotton_aphids">మిథైల్ డెమెటాన్ 2 మి.లీ/లీటరు పిచికారీ చేయండి.</string>
+    <string name="sol_mango_mildew">15 రోజుల వ్యవధిలో 2 గ్రా/లీటరు చొప్పున నీటిలో కరిగే గంధకాన్ని పిచికారీ చేయండి।</string>
+    <string name="sol_mango_anthracnose">కార్బెండజిమ్ 1 గ్రా/లీటరు లేదా కాపర్ ఆక్సిక్లోరైడ్ 3 గ్రా/లీటరు పిచికారీ చేయండి।</string>
+    <string name="sol_wheat_rust">నిరోధక రకాలను (HD 2967) ఉపయోగించండి లేదా ప్రోపికోనజోల్ పిచికారీ చేయండి।</string>
+    <string name="sol_wheat_smut">విటావాక్స్‌తో (2 గ్రా/కేజీ విత్తనం) విత్తన శుద్ధి చేయండి।</string>
+    <string name="sol_rice_blast">ట్రైసైక్లాజోల్ 0.6 గ్రా/లీటరు లేదా కార్బెండజిమ్ 1 గ్రా/లీటరు పిచికారీ చేయండి।</string>
+    <string name="sol_rice_bph">ప్రతి 2 మీటర్ల వరుసల మధ్య 30 సెం.మీ ఖాళీ స్థలాన్ని ఉంచండి।</string>
+    <string name="sol_cotton_bollworm">ఫెరోమోన్ ట్రాప్స్ ఉపయోగించండి మరియు స్పినోసాడ్ 45 ఎస్సీ పిచికారీ చేయండి।</string>
+    <string name="sol_cotton_aphids">మిథైల్ డెమెటాన్ 2 మి.లీ/లీటరు పిచికారీ చేయండి।</string>
 </resources>

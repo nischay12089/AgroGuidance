@@ -2,7 +2,13 @@
     <string name="app_name">അഗ്രോ ഗൈഡൻസ്</string>
     <string name="welcome_back">വീണ്ടും സ്വാഗതം</string>
     <string name="join_us">ഞങ്ങളോടൊപ്പം ചേരുക</string>
+    <string name="sign_in_to_account">നിങ്ങളുടെ അക്കൗണ്ടിലേക്ക് സൈൻ ഇൻ ചെയ്യുക</string>
     <string name="start_farming_journey">നിങ്ങളുടെ കൃഷി യാത്ര ആരംഭിക്കുക</string>
+    <string name="login">ലോഗിൻ</string>
+    <string name="register">രജിസ്റ്റർ</string>
+    <string name="email_address">ഇമെയിൽ വിലാസം</string>
+    <string name="password">പാസ്‌വേഡ്</string>
+    <string name="forgot_password">പാസ്‌വേഡ് മറന്നോ?</string>
     <string name="sign_in">സൈൻ ഇൻ ചെയ്യുക</string>
     <string name="create_account">അക്കൗണ്ട് സൃഷ്ടിക്കുക</string>
     <string name="terms_service">തുടരുന്നതിലൂടെ, ഞങ്ങളുടെ സേവന നിബന്ധനകൾ നിങ്ങൾ അംഗീകരിക്കുന്നു</string>
@@ -19,6 +25,7 @@
     <string name="ai_advisor">AI ഉപദേഷ്ടാവ്</string>
     <string name="app_settings">ആപ്പ് ക്രമീകരണങ്ങൾ</string>
     <string name="language_preferences">ഭാഷാ മുൻഗണനകൾ</string>
+    <string name="language">ഭാഷ</string>
     <string name="select_language_desc">ആപ്പിനായി നിങ്ങളുടെ ഇഷ്ടപ്പെട്ട ഭാഷ തിരഞ്ഞെടുക്കുക</string>
     <string name="personalize_profile">നിങ്ങളുടെ പ്രൊഫൈൽ വ്യക്തിഗതമാക്കുക</string>
     <string name="enter_name_desc">നിങ്ങളുടെ കൃഷി യാത്ര ആരംഭിക്കുന്നതിന് പേര് നൽകുക</string>

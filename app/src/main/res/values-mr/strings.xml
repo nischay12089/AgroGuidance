@@ -25,6 +25,7 @@
     <string name="ai_advisor">एआय सल्लागार</string>
     <string name="app_settings">अॅप सेटिंग्ज</string>
     <string name="language_preferences">भाषा प्राधान्ये</string>
+    <string name="language">भाषा</string>
     <string name="select_language_desc">अॅपसाठी तुमची पसंतीची भाषा निवडा</string>
     <string name="personalize_profile">तुमचे प्रोफाइल वैयक्तिकृत करा</string>
     <string name="enter_name_desc">तुमचा शेतीचा प्रवास सुरू करण्यासाठी तुमचे नाव टाका</string>

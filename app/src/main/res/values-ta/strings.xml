@@ -2,7 +2,13 @@
     <string name="app_name">அக்ரோகைடன்ஸ்</string>
     <string name="welcome_back">மீண்டும் வருக</string>
     <string name="join_us">எங்களுடன் இணையுங்கள்</string>
+    <string name="sign_in_to_account">உங்கள் கணக்கில் உள்நுழையவும்</string>
     <string name="start_farming_journey">உங்கள் விவசாயப் பயணத்தைத் தொடங்குங்கள்</string>
+    <string name="login">உள்நுழைவு</string>
+    <string name="register">பதிவு</string>
+    <string name="email_address">மின்னஞ்சல் முகவரி</string>
+    <string name="password">கடவுச்சொல்</string>
+    <string name="forgot_password">கடவுச்சொல்லை மறந்துவிட்டீர்களா?</string>
     <string name="sign_in">உள்நுழைக</string>
     <string name="create_account">கணக்கை உருவாக்கு</string>
     <string name="terms_service">தொடர்வதன் மூலம், எங்கள் சேவை விதிமுறைகளை ஏற்கிறீர்கள்</string>
@@ -19,6 +25,7 @@
     <string name="ai_advisor">AI ஆலோசகர்</string>
     <string name="app_settings">பயன்பாட்டு அமைப்புகள்</string>
     <string name="language_preferences">மொழி விருப்பத்தேர்வுகள்</string>
+    <string name="language">மொழி</string>
     <string name="select_language_desc">பயன்பாட்டிற்கான உங்கள் விருப்ப மொழியைத் தேர்ந்தெடுக்கவும்</string>
     <string name="personalize_profile">உங்கள் சுயவிவரத்தைத் தனிப்பயனாக்குங்கள்</string>
     <string name="enter_name_desc">உங்கள் விவசாயப் பயணத்தைத் தொடங்க உங்கள் பெயரை உள்ளிடவும்</string>
