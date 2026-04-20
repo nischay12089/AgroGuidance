@@ -47,6 +47,8 @@ import androidx.compose.material.icons.automirrored.filled.*
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.lifecycle.viewmodel.compose.viewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 
 class MainActivity : AppCompatActivity() {
@@ -470,8 +472,7 @@ fun DatabaseTab(viewModel: CropViewModel) {
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
+            verticalAlignment = Alignment.CenterVertically) {
             Text(
                 text = "➕ ${stringResource(R.string.add_new_crop)}",
                 style = TextStyle(color = Color.White, fontWeight = FontWeight.Bold, fontSize = 18.sp)
@@ -867,6 +868,8 @@ fun LibraryTab(cropsWithIssues: List<CropWithIssues>, viewModel: CropViewModel) 
 
 @Composable
 fun AiAdvisorTab() {
+    val context = LocalContext.current
+    val aiManager = remember { LocalAiManager(context) }
     var prompt by remember { mutableStateOf("") }
     var response by remember { mutableStateOf("") }
     var isLoading by remember { mutableStateOf(false) }
@@ -899,10 +902,27 @@ fun AiAdvisorTab() {
                     if (prompt.isNotBlank()) {
                         isLoading = true
                         response = ""
-                        scope.launch {
-                            delay(2000)
-                            response = "Based on Indian agricultural practices, for '$prompt', you should prioritize soil testing and use organic neem cake. Ensure moisture levels are consistent and use crop rotation with legumes to naturally enrich nitrogen."
-                            isLoading = false
+                        scope.launch(Dispatchers.IO) {
+                            try {
+                                if (!aiManager.isModelAvailable) {
+                                    withContext(Dispatchers.Main) {
+                                        response = "Model file not found. Please download 'model.bin' and place it in the app storage."
+                                        isLoading = false
+                                    }
+                                    return@launch
+                                }
+                                
+                                val result = aiManager.generateResponse(prompt)
+                                withContext(Dispatchers.Main) {
+                                    response = result
+                                    isLoading = false
+                                }
+                            } catch (e: Exception) {
+                                withContext(Dispatchers.Main) {
+                                    response = "Error: ${e.message}"
+                                    isLoading = false
+                                }
+                            }
                         }
                     }
                 }) {

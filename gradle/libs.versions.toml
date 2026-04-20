@@ -19,6 +19,7 @@ room = "2.7.0-alpha11"
 ksp = "2.1.0-1.0.29"
 googleServices = "4.4.2"
 firebaseDatabase = "20.3.0"
+tasksGenAi = "0.10.14"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -46,6 +47,7 @@ androidx-room-runtime = { group = "androidx.room", name = "room-runtime", versio
 androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+tasks-genai = { group = "com.google.mediapipe", name = "tasks-genai", version.ref = "tasksGenAi" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
