@@ -40,6 +40,24 @@
     <string name="about_app">অ্যাগ্রো গাইডেন্স সম্পর্কে</string>
     <string name="version">সংস্করণ</string>
 
+    <!-- Update Crops Section (Bengali) -->
+    <string name="update_crops">ফসল আপডেট করুন</string>
+    <string name="add_new_crop">নতুন ফসল যোগ করুন</string>
+    <string name="crop_name_hint">ফসলের নাম (যেমন ধান, গম)</string>
+    <string name="add_crop_btn">ফসল যোগ করুন</string>
+    <string name="add_issue_solution">সমস্যা ও সমাধান যোগ করুন</string>
+    <string name="select_crop_label">ফসল নির্বাচন করুন:</string>
+    <string name="issue_name_hint">সমস্যার নাম (যেমন ব্লাস্ট রোগ)</string>
+    <string name="solution_details_hint">সমাধানের বিবরণ</string>
+    <string name="submit_issue_solution_btn">সমস্যা ও সমাধান জমা দিন</string>
+    <string name="sync_completed">সিঙ্ক সম্পন্ন হয়েছে</string>
+    <string name="sync_failed">সিঙ্ক ব্যর্থ হয়েছে</string>
+    <string name="library_empty">আপনার লাইব্রেরি খালি</string>
+    <string name="fetch_data_btn">ডেটাবেস থেকে ডেটা আনুন</string>
+    <string name="fetching_label">আনা হচ্ছে...</string>
+    <string name="data_fetch_success">ডেটা সফলভাবে আনা হয়েছে</string>
+    <string name="data_fetch_failed">ডেটা আনতে ব্যর্থ হয়েছে</string>
+
     <!-- Crop Names -->
     <string name="crop_mango">আম</string>
     <string name="crop_wheat">গম</string>

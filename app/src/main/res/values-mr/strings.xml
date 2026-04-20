@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">एग्रोगाइडन्स</string>
+    <string name="app_name">एग्रोगाइडेंस</string>
     <string name="welcome_back">पुन्हा स्वागत आहे</string>
     <string name="join_us">आमच्याशी जोडा</string>
     <string name="sign_in_to_account">तुमच्या खात्यात साइन इन करा</string>
@@ -32,13 +32,31 @@
     <string name="your_full_name">तुमचे पूर्ण नाव</string>
     <string name="continue_btn">सुरू ठेवा</string>
     <string name="ai_consultant_title">वैयक्तिक एआय शेती सल्लागार</string>
-    <string name="ai_consultant_desc">माती, हवामान किंवा सेंद्रिय शेतीबद्दल काहीही विचारा — पूर्णपणे ऑफलाइन कार्य करते.</string>
+    <string name="ai_consultant_desc">माती, हवामान किंवा सेंद्रिय शेतीबद्दल काहीही विचारा — पूर्णपणे offline कार्य करते.</string>
     <string name="ai_prompt_hint">उदा. मी सेंद्रिय खत कसे बनवू?</string>
     <string name="ai_suggestion_label">एआय तज्ञ सूचना</string>
     <string name="enter_name_error">कृपया आपले नाव प्रविष्ट करा</string>
     <string name="search_crop_hint">पीक शोधा (उदा. आंबा, भात)...</string>
     <string name="about_app">एग्रोगाइडन्सबद्दल</string>
     <string name="version">आवृत्ती</string>
+
+    <!-- Update Crops Section (Marathi) -->
+    <string name="update_crops">पिके अपडेट करा</string>
+    <string name="add_new_crop">नवीन पीक जोडा</string>
+    <string name="crop_name_hint">पिकाचे नाव (उदा. भात, गहू)</string>
+    <string name="add_crop_btn">पीक जोडा</string>
+    <string name="add_issue_solution">समस्या आणि उपाय जोडा</string>
+    <string name="select_crop_label">पीक निवडा:</string>
+    <string name="issue_name_hint">समस्येचे नाव (उदा. करपा रोग)</string>
+    <string name="solution_details_hint">उपाय तपशील</string>
+    <string name="submit_issue_solution_btn">समस्या आणि उपाय सबमिट करा</string>
+    <string name="sync_completed">सिंक पूर्ण झाले</string>
+    <string name="sync_failed">सिंक अयशस्वी झाले</string>
+    <string name="library_empty">तुमची लायब्ररी रिकामी आहे</string>
+    <string name="fetch_data_btn">डेटाबेसमधून डेटा मिळवा</string>
+    <string name="fetching_label">मिळवत आहे...</string>
+    <string name="data_fetch_success">डेटा यशस्वीरित्या मिळाला</string>
+    <string name="data_fetch_failed">डेटा मिळवण्यात अयशस्वी</string>
 
     <!-- Crop Names -->
     <string name="crop_mango">आंबा</string>

@@ -90,6 +90,18 @@ class MainActivity : AppCompatActivity() {
 }
 
 @Composable
+fun localized(text: String, prefix: String = ""): String {
+    val context = LocalContext.current
+    val normalized = text.lowercase().trim()
+        .replace(" ", "_")
+        .replace("(", "")
+        .replace(")", "")
+        .replace("-", "_")
+    val resId = context.resources.getIdentifier("${prefix}${normalized}", "string", context.packageName)
+    return if (resId != 0) stringResource(resId) else text
+}
+
+@Composable
 fun LanguageSwitcher() {
     var expanded by remember { mutableStateOf(false) }
     val languages = listOf(
@@ -403,7 +415,7 @@ fun HomePage(userName: String, viewModel: CropViewModel = viewModel()) {
                                 0 -> stringResource(R.string.search)
                                 1 -> stringResource(R.string.library)
                                 2 -> stringResource(R.string.ai_advisor)
-                                3 -> "Database"
+                                3 -> stringResource(R.string.update_crops)
                                 else -> title
                             },
                             style = TextStyle(
@@ -461,7 +473,7 @@ fun DatabaseTab(viewModel: CropViewModel) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = "➕ Add New Crop",
+                text = "➕ ${stringResource(R.string.add_new_crop)}",
                 style = TextStyle(color = Color.White, fontWeight = FontWeight.Bold, fontSize = 18.sp)
             )
             
@@ -469,9 +481,9 @@ fun DatabaseTab(viewModel: CropViewModel) {
                 onClick = {
                     viewModel.syncFromFirebase { success ->
                         if (success) {
-                            Toast.makeText(context, "Sync Completed", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, context.getString(R.string.sync_completed), Toast.LENGTH_SHORT).show()
                         } else {
-                            Toast.makeText(context, "Sync Failed", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, context.getString(R.string.sync_failed), Toast.LENGTH_SHORT).show()
                         }
                     }
                 },
@@ -490,7 +502,7 @@ fun DatabaseTab(viewModel: CropViewModel) {
         AuthTextField(
             value = cropName,
             onValueChange = { cropName = it },
-            hint = "Crop Name (e.g. Rice, Wheat)"
+            hint = stringResource(R.string.crop_name_hint)
         )
         Spacer(modifier = Modifier.height(8.dp))
         Button(
@@ -503,7 +515,7 @@ fun DatabaseTab(viewModel: CropViewModel) {
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(containerColor = PrimaryGreen)
         ) {
-            Text("Add Crop")
+            Text(stringResource(R.string.add_crop_btn))
         }
 
         Spacer(modifier = Modifier.height(24.dp))
@@ -511,12 +523,12 @@ fun DatabaseTab(viewModel: CropViewModel) {
         Spacer(modifier = Modifier.height(24.dp))
 
         Text(
-            text = "➕ Add Issue & Solution",
+            text = "➕ ${stringResource(R.string.add_issue_solution)}",
             style = TextStyle(color = Color.White, fontWeight = FontWeight.Bold, fontSize = 18.sp)
         )
         Spacer(modifier = Modifier.height(8.dp))
         
-        Text("Select Crop:", color = Color.Gray, fontSize = 12.sp)
+        Text(stringResource(R.string.select_crop_label), color = Color.Gray, fontSize = 12.sp)
         Box(modifier = Modifier.fillMaxWidth().heightIn(max = 150.dp).background(TextFieldBg, RoundedCornerShape(12.dp)).padding(4.dp)) {
             LazyColumn {
                 items(crops) { crop ->
@@ -536,13 +548,13 @@ fun DatabaseTab(viewModel: CropViewModel) {
         AuthTextField(
             value = issueName,
             onValueChange = { issueName = it },
-            hint = "Issue Name (e.g. Blast Disease)"
+            hint = stringResource(R.string.issue_name_hint)
         )
         Spacer(modifier = Modifier.height(8.dp))
         AuthTextField(
             value = solution,
             onValueChange = { solution = it },
-            hint = "Solution Details"
+            hint = stringResource(R.string.solution_details_hint)
         )
         Spacer(modifier = Modifier.height(16.dp))
         
@@ -563,7 +575,7 @@ fun DatabaseTab(viewModel: CropViewModel) {
             shape = RoundedCornerShape(12.dp)
         ) {
             Text(
-                "Submit Issue & Solution",
+                stringResource(R.string.submit_issue_solution_btn),
                 style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 16.sp)
             )
         }
@@ -742,7 +754,7 @@ fun SearchTab(cropsWithIssues: List<CropWithIssues>) {
             items(results) { item ->
                 Column {
                     Text(
-                        text = "📍 ${item.crop.name}",
+                        text = "📍 ${localized(item.crop.name, "crop_")}",
                         style = TextStyle(color = PrimaryGreen, fontWeight = FontWeight.Bold, fontSize = 18.sp)
                     )
                     item.issues.forEach { issue ->
@@ -754,11 +766,11 @@ fun SearchTab(cropsWithIssues: List<CropWithIssues>) {
                         ) {
                             Column(modifier = Modifier.padding(12.dp)) {
                                 Text(
-                                    text = "⚠️ ${issue.issueName}",
+                                    text = "⚠️ ${localized(issue.issueName, "issue_")}",
                                     style = TextStyle(color = Color.White, fontWeight = FontWeight.Bold)
                                 )
                                 Text(
-                                    text = issue.solution,
+                                    text = localized(issue.solution, "sol_"),
                                     style = TextStyle(color = Color(0xFFD1FAE5), fontSize = 14.sp)
                                 )
                             }
@@ -780,15 +792,15 @@ fun LibraryTab(cropsWithIssues: List<CropWithIssues>, viewModel: CropViewModel) 
             Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.padding(32.dp)) {
                 Icon(Icons.AutoMirrored.Filled.LibraryBooks, contentDescription = null, tint = Color.Gray, modifier = Modifier.size(64.dp))
                 Spacer(modifier = Modifier.height(16.dp))
-                Text("Your library is empty", color = Color.Gray, textAlign = TextAlign.Center)
+                Text(stringResource(R.string.library_empty), color = Color.Gray, textAlign = TextAlign.Center)
                 Spacer(modifier = Modifier.height(24.dp))
                 Button(
                     onClick = {
                         viewModel.syncFromFirebase { success ->
                             if (success) {
-                                Toast.makeText(context, "Data fetched successfully", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(context, context.getString(R.string.data_fetch_success), Toast.LENGTH_SHORT).show()
                             } else {
-                                Toast.makeText(context, "Failed to fetch data", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(context, context.getString(R.string.data_fetch_failed), Toast.LENGTH_SHORT).show()
                             }
                         }
                     },
@@ -800,9 +812,9 @@ fun LibraryTab(cropsWithIssues: List<CropWithIssues>, viewModel: CropViewModel) 
                     if (isSyncing) {
                         CircularProgressIndicator(modifier = Modifier.size(20.dp), color = Color.White, strokeWidth = 2.dp)
                         Spacer(modifier = Modifier.width(8.dp))
-                        Text("Fetching...")
+                        Text(stringResource(R.string.fetching_label))
                     } else {
-                        Text("Fetch Data from Database")
+                        Text(stringResource(R.string.fetch_data_btn))
                     }
                 }
             }
@@ -820,7 +832,7 @@ fun LibraryTab(cropsWithIssues: List<CropWithIssues>, viewModel: CropViewModel) 
                 ) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
-                            text = "🌿 ${item.crop.name}",
+                            text = "🌿 ${localized(item.crop.name, "crop_")}",
                             style = TextStyle(color = Color.White, fontSize = 16.sp),
                             modifier = Modifier.weight(1f)
                         )
@@ -836,11 +848,11 @@ fun LibraryTab(cropsWithIssues: List<CropWithIssues>, viewModel: CropViewModel) 
                                 HorizontalDivider(color = Color.White.copy(alpha = 0.1f))
                                 Column(modifier = Modifier.padding(vertical = 8.dp)) {
                                     Text(
-                                        text = "⚠️ ${issue.issueName}",
+                                        text = "⚠️ ${localized(issue.issueName, "issue_")}",
                                         style = TextStyle(color = Color.White, fontWeight = FontWeight.Bold)
                                     )
                                     Text(
-                                        text = issue.solution,
+                                        text = localized(issue.solution, "sol_"),
                                         style = TextStyle(color = Color(0xFFA7F3D0), fontSize = 14.sp)
                                     )
                                 }

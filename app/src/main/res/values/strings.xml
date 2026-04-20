@@ -40,6 +40,24 @@
     <string name="about_app">About AgroGuidance</string>
     <string name="version">Version</string>
 
+    <!-- Update Crops Section -->
+    <string name="update_crops">Update Crops</string>
+    <string name="add_new_crop">Add New Crop</string>
+    <string name="crop_name_hint">Crop Name (e.g. Rice, Wheat)</string>
+    <string name="add_crop_btn">Add Crop</string>
+    <string name="add_issue_solution">Add Issue &amp; Solution</string>
+    <string name="select_crop_label">Select Crop:</string>
+    <string name="issue_name_hint">Issue Name (e.g. Blast Disease)</string>
+    <string name="solution_details_hint">Solution Details</string>
+    <string name="submit_issue_solution_btn">Submit Issue &amp; Solution</string>
+    <string name="sync_completed">Sync Completed</string>
+    <string name="sync_failed">Sync Failed</string>
+    <string name="library_empty">Your library is empty</string>
+    <string name="fetch_data_btn">Fetch Data from Database</string>
+    <string name="fetching_label">Fetching...</string>
+    <string name="data_fetch_success">Data fetched successfully</string>
+    <string name="data_fetch_failed">Failed to fetch data</string>
+
     <!-- Crop Names -->
     <string name="crop_mango">Mango</string>
     <string name="crop_wheat">Wheat</string>

@@ -40,6 +40,24 @@
     <string name="about_app">एग्रोगाइडेंस के बारे में</string>
     <string name="version">संस्करण</string>
 
+    <!-- Update Crops Section (Hindi) -->
+    <string name="update_crops">फसलें अपडेट करें</string>
+    <string name="add_new_crop">नई फसल जोड़ें</string>
+    <string name="crop_name_hint">फसल का नाम (जैसे चावल, गेहूं)</string>
+    <string name="add_crop_btn">फसल जोड़ें</string>
+    <string name="add_issue_solution">समस्या और समाधान जोड़ें</string>
+    <string name="select_crop_label">फसल चुनें:</string>
+    <string name="issue_name_hint">समस्या का नाम (जैसे ब्लास्ट रोग)</string>
+    <string name="solution_details_hint">समाधान का विवरण</string>
+    <string name="submit_issue_solution_btn">समस्या और समाधान जमा करें</string>
+    <string name="sync_completed">सिंक पूरा हुआ</string>
+    <string name="sync_failed">सिंक विफल रहा</string>
+    <string name="library_empty">आपकी लाइब्रेरी खाली है</string>
+    <string name="fetch_data_btn">डेटाबेस से डेटा प्राप्त करें</string>
+    <string name="fetching_label">प्राप्त किया जा रहा है...</string>
+    <string name="data_fetch_success">डेटा सफलतापूर्वक प्राप्त हुआ</string>
+    <string name="data_fetch_failed">डेटा प्राप्त करने में विफल</string>
+
     <!-- Crop Names -->
     <string name="crop_mango">आम</string>
     <string name="crop_wheat">गेहूं</string>
@@ -52,7 +70,7 @@
     <string name="issue_rust">रतुआ (रस्ट)</string>
     <string name="issue_loose_smut">लूज स्मट</string>
     <string name="issue_blast">ब्लास्ट (झोंका रोग)</string>
-    <string name="issue_brown_plant_hopper">भूरा पादप फुदका</string>
+    <string name="issue_brown_plant_hopper">भूरा पादप फुদका</string>
     <string name="issue_bollworm">बॉलवॉर्म</string>
     <string name="issue_aphids">एफिड्स (माहू)</string>
 
