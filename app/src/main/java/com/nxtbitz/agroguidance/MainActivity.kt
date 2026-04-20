@@ -313,7 +313,7 @@ fun UserPage(onNameSubmitted: (String) -> Unit) {
 fun HomePage(userName: String, viewModel: CropViewModel = viewModel()) {
     var selectedTab by rememberSaveable { mutableIntStateOf(0) }
     var showSettings by rememberSaveable { mutableStateOf(false) }
-    val tabs = listOf("Search", "Library", "AI Advisor", "Database")
+    val tabs = listOf("Search", "Library", "AI Advisor", "Update Crops")
     
     val cropsWithIssues by viewModel.cropsWithIssues.collectAsState(initial = emptyList())
 
